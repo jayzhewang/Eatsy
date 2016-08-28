@@ -1,10 +1,25 @@
 <h1><strong>Eatsy</strong></h1>
-
-Eatsy is a full-stack web application inspired by Yelp.
+<p><p>
 
 <h2>Minimum Viable Product</h2>
+<p>Eatsy is a full-stack web application inspired by Yelp. Built on
+Ruby on Rails and React/Redux. By September 9, this app will satisfy
+the following criteria with a bug-free and smooth UI.</p>
+<ul>
+  <li type='circle'>Hosting on Heroku</li>
+  <li type='circle'>Business Page</li>
+  <li type='circle'>Reviews/Ratings</li>
+  <li type='circle'>Search/Filters</li>
+  <li type='circle'>Reviews/Ratings</li>
+  <li type='circle'>Google Maps Integration</li>
+</ul>
 
 <h2>Design Docs</h2>
+<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/api-endpoints.md">API Endpoints</a>
+<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/component-hierarchy.md">Component Hierarchy</a>
+<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/redux-structure.md"> Redux Structure</a>
+<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/sample-state.md">Sample State</a>
+<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/schema.md">Schema</a>
 
 <h2>Implementation Timeline</h2>
 
