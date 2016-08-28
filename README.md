@@ -15,11 +15,13 @@ the following criteria with a bug-free and smooth UI.</p>
 </ul>
 
 <h2>Design Docs</h2>
-<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/api-endpoints.md">API Endpoints</a>
-<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/component-hierarchy.md">Component Hierarchy</a>
-<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/redux-structure.md"> Redux Structure</a>
-<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/sample-state.md">Sample State</a>
-<a href="https://github.com/jz-wang/Eatsy/blob/master/docs/schema.md">Schema</a>
+<ul>
+  <li type='disc'><a href="https://github.com/jz-wang/Eatsy/blob/master/docs/api-endpoints.md">API Endpoints</a></li>
+  <li type='disc'><a href="https://github.com/jz-wang/Eatsy/blob/master/docs/component-hierarchy.md">Component Hierarchy</a></li>
+  <li type='disc'><a href="https://github.com/jz-wang/Eatsy/blob/master/docs/redux-structure.md"> Redux Structure</a></li>
+  <li type='disc'><a href="https://github.com/jz-wang/Eatsy/blob/master/docs/sample-state.md">Sample State</a></li>
+  <li type='disc'><a href="https://github.com/jz-wang/Eatsy/blob/master/docs/schema.md">Schema</a></li>
+</ul>
 
 <h2>Implementation Timeline</h2>
 
