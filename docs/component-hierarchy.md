@@ -34,7 +34,7 @@
     <li type='disc'>Body<li>
     <li type='disc'>Tags</li>
   </ul>
-<h2>TagsContainer</li>
+<h2>TagsContainer</h2>
   <ul>
     <li type='disc'>Useful/Funny/Cool Buttons<li>
   </ul>
