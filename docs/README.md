@@ -38,6 +38,8 @@ the following criteria with a bug-free and smooth UI.</p>
     <li type='disc'>Landing page for Sign Up/Sign In</li>
     <li type='disc'>Seed</li>
     <li type='disc'>Test</li>
+    <li type='disc'>CSS</li>
+    <li type='disc'>Seed Profile Pictures</li>
     <li type='disc'><strong>Bug Test</strong></li>
   </ul>
 
@@ -49,7 +51,8 @@ the following criteria with a bug-free and smooth UI.</p>
     <li type='disc'>CRUD API</li>
     <li type='disc'>Seed</li>
     <li type='disc'>Test Interaction with Users</li>
-    <li type='disc'>Style</li>
+    <li type='disc'>Review Photos</li>
+    <li type='disc'>CSS</li>
     <li type='disc'><strong>Bug Test</strong></li>
   </ul>
 
@@ -61,7 +64,8 @@ the following criteria with a bug-free and smooth UI.</p>
     <li type='disc'>CRUD API</li>
     <li type='disc'>Seed</li>
     <li type='disc'>Test Interaction with Reviews</li>
-    <li type='disc'>Style</li>
+    <li type='disc'>Business Photos</li>
+    <li type='disc'>CSS</li>
     <li type='disc'><strong>Bug Test</strong></li>
   </ul>
 
@@ -72,7 +76,7 @@ the following criteria with a bug-free and smooth UI.</p>
     <li type='disc'>Tag Controller</li>
     <li type='disc'>Seed</li>
     <li type='disc'>Test Interaction with Reviews/Restaurants</li>
-    <li type='disc'>Style</li>
+    <li type='disc'>CSS</li>
     <li type='disc'><strong>Bug Test</strong></li>
   </ul>
 
@@ -82,6 +86,7 @@ the following criteria with a bug-free and smooth UI.</p>
     <li type='disc'>Smooth/Endless Scroll</li>
     <li type='disc'>Buy custom Domain, host on Heroku</li>
     <li type='disc'>Integrate Google Maps</li>
+    <li type='disc'>CSS</li>
   </ul>
 
 <h3>Phase VI: Design/Bug Test(2 days)</h3>
