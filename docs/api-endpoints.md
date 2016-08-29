@@ -1,11 +1,11 @@
-<h1>-----------------------API Endpoints----------------------</h1>
+<h1>API Endpoints</h1>
 <h2>HTML API</h2>
 <h3>Root</h3>
 <ul>
   <li type='disc'>GET / - Loads React Web App</li>
 </ul>
 
-<h2>-------------------------JSON API-------------------------</h2>
+<h2>JSON API</h2>
 <h3>Users</h3>
 <ul>
   <li type='disc'>POST /api/users</li>

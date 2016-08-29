@@ -1,4 +1,4 @@
-<h1>--------------------Component Hierarchy--------------------</h1>
+<h1>Component Hierarchy</h1>
 <h2>AuthFormContainer</h2>
   <ul>
     <li type='disc'>AuthForm</li>
@@ -46,14 +46,14 @@
   <li type='disc'>Restaurant Location<li>
   <li type='disc'>Latest Review(1)<li>
   <li type='disc'>Maps<li>
-<h2>---------------------------Search---------------------------</h2>
+<h2>Search</h2>
 <h2>RestaurantSearch</h2>
   <li type='disc'>AutoSearch</li>
   <li type='disc'>AutoSearchResults</li>
 <h2>LocationSearch</h2>
   <li type='disc'>AutoSearch</li>
   <li type='disc'>AutoSearchResults</li>
-<h1>---------------------------Routes---------------------------</h1>
+<h1>Routes</h1>
 | Paths                  | Components           |
 | -----------------------|---------------------:|
 | "sign_in"              | "AuthFormContainer"  |

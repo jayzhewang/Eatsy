@@ -1,5 +1,5 @@
 <h1>Schema</h1>
-<h2>----------------------------users----------------------------</h2>
+<h2>users</h2>
 <p>has_many :reviews</p>
 | column names    | data type  | details                   |
 | ----------------|:----------:|--------------------------:|
@@ -11,7 +11,7 @@
 | gender          | string     |                           |
 | location        | string     |                           |  
 | picture         | varbinary  |                           |
-<h2>-------------------------restaurants-------------------------</h2>
+<h2>restaurants</h2>
 <p>has_many :reviews</p>
 | column names    | data type  | details                   |
 | ----------------|:----------:|--------------------------:|
@@ -21,7 +21,7 @@
 | picture         | varbinary  | not null                  |
 | rating          | float      | not null                  |
 | hour            | string     | not null                  |
-<h2>---------------------------reviews---------------------------</h2>
+<h2>reviews</h2>
 <p>belongs_to :user, belongs_to :restaurant, has_many :tags</p>
 | column names    | data type  | details                   |
 | ----------------|:----------:|--------------------------:|
@@ -29,7 +29,7 @@
 | userId          | integer    | not null, indexed         |
 | restaurantId    | integer    | not null, indexed         |
 | body            | text       | not null                  |  
-<h2>----------------------------Tags-----------------------------</h2>
+<h2>Tags</h2>
 <p>belongs_to :review</p>
 | column names    | data type  | details                   |
 | ----------------|:----------:|--------------------------:|
