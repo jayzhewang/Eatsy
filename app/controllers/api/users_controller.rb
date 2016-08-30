@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      flash.now[:errors] = @user.errors.full_messages
+      render json: @user.errors.full_messages, status 422
     end
   end
 
