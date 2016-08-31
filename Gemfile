@@ -50,3 +50,9 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
 end
+
+group :production do
+  gem 'newrelic_rpm'
+  #error feedback
+  gem 'rails_12factor'
+end
