@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar {
+background-color: #D2D6DE;
+opacity: 0.85;
+border: none;
+z-index: 100
+}
+
+.container {
+  // justify-content: space-between;
+}
+
+.navbar-header {
+  width: 33.333%;
+  float: left;
+}
+
+.header-link {
+  font-size: 40px;
+}
+
+.nav.navbar-nav.navbar-right {
+  height: 50px;
+  float: right;
+}
+
+.greeting-login-signup {
+  float: right;
+  display: block;
+  width: 200px;
+  height: 50px;
+}
+
+.greeting-text {
+  color: white;
+  background-color: #57AD57;
+  display: block;
+  margin-right: 0px!important;
+  width: 90px;
+  height: 30px;
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+.greeting-text-align-center {
+  margin-top: 5px;
+  display: block;
+  // font-family: Georgia as sans-serif;
+}
+
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.login-form {
+  // border: 1px solid red;
+  align-items: flex-start;
+}
+
+.login-form-fill-info {
+  // border: 1px solid black;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 50px;
+  width: 300px;
+  margin-left: 150px;
+  float: left;
+}
+
+.login-input {
+  width: 250px;
+  margin-bottom: 10px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.login-form-message {
+  text-align: center;
+}
+
+.login-submit-form {
+  margin-left: 150px;
+  width: 100px;
+}
+
+.login-submit-button {
+  width: 250px;
+  border: none;
+  background-color: #57AD57;
+  color: white;
+}
+
+.login-submit-button:hover {
+  background-color: #11939A;
+}
+
+.login-form-box {
+  width: auto;
+}
+
+// div {
+//   display: block;
+// }
+// //
+// .app-banner {
+// top: 0px;
+// position: fixed;
+// width: 100%;
+// box-sizing: border-box;
+//
+// z-index: 99;
+// }
+//
+// .navbar {
+// height: 64px;
+// padding: 12px, 20px;
+// position: absolute;
+// background-color: #f8f8f9;
+// opacity: 0.85;
+// width: 100%;
+//
+// z-index: 100
+//}
+
+//
+// .app-header-layout {
+//   margin: 0px 10px 0px -10px;
+//   display: inline-block;
+// }
+//
+// .app-header-layout-left-half {
+//   padding-left: 10px;
+//   display: inline-block;
+//   vertical-align: top;
+//   width: 33.333%;
+// }
+//
+// .app-header-layout-right-half {
+//   padding-left: 10px;
+//   display: inline-block;
+//   vertical-align: top;
+//   width: 66.666%;
+// }
+
+
+/*Top Header Banner*/
+/*.header-link {
+  color: green;
+}
+
+.login-signup {
+  background-color: #57AD57;
+  color: #FFF;
+  box-sizing: border-box;
+  text-decoration: none;
+}*/

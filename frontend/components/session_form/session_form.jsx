@@ -25,18 +25,20 @@ class SessionForm extends React.Component {
     if(this.props.formType !== 'login'){
       return (
         <div>
-          <label> Email:
+          <label>
               <input type='text'
-                     value={this.state.email}
-                     onChange={this.update('email')}
-                     className='login-input' />
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className='login-input' />
           </label>
 
-          <label> Age:
+          <label>
               <input type='text'
-                     value={this.state.age}
-                     onChange={this.update('age')}
-                     className='login-input' />
+                placeholder='Age'
+                value={this.state.age}
+                onChange={this.update('age')}
+                className='login-input' />
           </label>
         </div>
       );
@@ -53,32 +55,51 @@ class SessionForm extends React.Component {
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
 
+  renderErrors(){
+    return (
+      <ul>
+        {this.props.errors.map((err, i)=>{
+          return <li type='disc' key={`err-${i}`}>{err}</li>;
+        })}
+      </ul>
+    );
+  }
+
   render(){
     return (
         <div className='login-form-container'>
-            <form onSubmit={this.handleSubmit} className='login-form-box'>
-                Welcome to Eatsy
-                <br/>
-                Please { this.props.formType } or { this.navLink() }
-                <div className='login-form'>
+            <form onSubmit={this.handleSubmit} className='login-form-box cf'>
+                <div className='login-form-message'>
+                  Welcome to Eatsy
+                  <br/>
+                  Please { this.props.formType } or { this.navLink() }
+                  {this.renderErrors()}
+                </div>
 
-                    <label> Username:
-                        <input type='text'
-                               value={this.state.username}
-                               onChange={this.update('username')}
-                               className='login-input' />
+                <div className='container'>
+
+                  <div className='login-form-fill-info'>
+                    <label>
+                      <input type='text'
+                        placeholder='Username'
+                        value={this.state.username}
+                        onChange={this.update('username')}
+                        className='login-input' />
                     </label>
 
-                    <label> Password:
-                        <input type='password'
-                               value={this.state.password}
-                               onChange={this.update('password')}
-                               className='login-input' />
+                    <label>
+                      <input type='password'
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                        className='login-input' />
                     </label>
 
                     {this.emailAndAgeLabel()}
+                    <input type='submit' value='Submit' className='login-submit-button'/>
+                  </div>
 
-                    <input type='submit' value='Submit'/>
+
                 </div>
             </form>
         </div>

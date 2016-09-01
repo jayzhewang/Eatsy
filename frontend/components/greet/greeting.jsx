@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    <Link to="/signup" activeClassName="current">Sign Up</Link>
+  <nav className='greeting-login-signup'>
+    <Link to="/login" activeClassName="current"><div className='greeting-text'><span className='greeting-text-align-center'>Login</span></div></Link>
+    <Link to="/signup" activeClassName="current"><div className='greeting-text'><span className='greeting-text-align-center'>Sign Up</span></div></Link>
   </nav>
 );
 
