@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((err, i)=>{
-          return <li type='disc' key={`err-${i}`}>{err}</li>;
+          return <li className="list-unstyled" type='disc' key={`err-${i}`}>{err}</li>;
         })}
       </ul>
     );

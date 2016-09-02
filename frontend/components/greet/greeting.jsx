@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
+const sessionLinks = (clearErrors) => (
   <nav className='greeting-login-signup'>
-    <Link to="/login" activeClassName="current"><div className='greeting-text'><span className='greeting-text-align-center'>Login</span></div></Link>
-    <Link to="/signup" activeClassName="current"><div className='greeting-text'><span className='greeting-text-align-center'>Sign Up</span></div></Link>
+    <Link to="/login" activeClassName="current" onClick={ clearErrors }><div className='greeting-text'><span className='greeting-text-align-center'>Login</span></div></Link>
+    <Link to="/signup" activeClassName="current" onClick={ clearErrors }><div className='greeting-text'><span className='greeting-text-align-center'>Sign Up</span></div></Link>
   </nav>
 );
 
@@ -15,11 +15,11 @@ const personalGreeting = (currentUser, logout) => (
   </hgroup>
 );
 
-const Greeting = ({currentUser, logout}) => {
+const Greeting = ({currentUser, clearErrors, logout}) => {
   if(currentUser){
     return personalGreeting(currentUser, logout);
   } else {
-    return sessionLinks();
+    return sessionLinks(clearErrors);
   }
 };
 

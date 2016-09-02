@@ -32,6 +32,12 @@ z-index: 100
 
 .header-link {
   font-size: 40px;
+  text-decoration: none;
+}
+
+.header-link:link {
+  font-size: 40px;
+  text-decoration: none;
 }
 
 .nav.navbar-nav.navbar-right {
