@@ -11,45 +11,69 @@
  * file per style scope.
  *
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+//--------------------------------DEFAULT-------------------------------
+html, body, header, footer, section, article, div,
+strong, a, img, p, h1, h2, h3, time, ul, li, small,
+form, label, input, textarea, button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+//----------------------------------------------------------------------
+
+.headerbar {
+  background: #EAE4E4;
+  font-family: sans-serif;
+}
+
+.body {
+  display: block;
+  font-family: sans-serif;
+}
 
 .navbar {
-background-color: #D2D6DE;
-opacity: 0.85;
-border: none;
-z-index: 100
+  display: block;
+  width: 900px;
+  margin: auto;
+  padding: 15px;
+  background: #EAE4E4;
 }
 
-.container {
-  // justify-content: space-between;
-}
-
-.navbar-header {
-  width: 33.333%;
+.header-brand {
+  color: green;
+  font-size: 36px;
   float: left;
 }
 
-.header-link {
-  font-size: 40px;
-  text-decoration: none;
-}
-
-.header-link:link {
-  font-size: 40px;
-  text-decoration: none;
-}
-
-.nav.navbar-nav.navbar-right {
-  height: 50px;
-  float: right;
+.navbar > GreetingContainer {
+  float: left;
 }
 
 .greeting-login-signup {
   float: right;
   display: block;
   width: 200px;
-  height: 50px;
 }
 
 .greeting-text {
@@ -67,7 +91,6 @@ z-index: 100
 .greeting-text-align-center {
   margin-top: 5px;
   display: block;
-  // font-family: Georgia as sans-serif;
 }
 
 .cf:after {
@@ -77,12 +100,10 @@ z-index: 100
 }
 
 .login-form {
-  // border: 1px solid red;
   align-items: flex-start;
 }
 
 .login-form-fill-info {
-  // border: 1px solid black;
   display: block;
   box-sizing: border-box;
   margin-top: 50px;
@@ -122,59 +143,124 @@ z-index: 100
   width: auto;
 }
 
-// div {
-//   display: block;
-// }
-// //
-// .app-banner {
-// top: 0px;
-// position: fixed;
-// width: 100%;
-// box-sizing: border-box;
-//
-// z-index: 99;
-// }
-//
-// .navbar {
-// height: 64px;
-// padding: 12px, 20px;
-// position: absolute;
-// background-color: #f8f8f9;
-// opacity: 0.85;
-// width: 100%;
-//
-// z-index: 100
-//}
-
-//
-// .app-header-layout {
-//   margin: 0px 10px 0px -10px;
-//   display: inline-block;
-// }
-//
-// .app-header-layout-left-half {
-//   padding-left: 10px;
-//   display: inline-block;
-//   vertical-align: top;
-//   width: 33.333%;
-// }
-//
-// .app-header-layout-right-half {
-//   padding-left: 10px;
-//   display: inline-block;
-//   vertical-align: top;
-//   width: 66.666%;
-// }
-
-
-/*Top Header Banner*/
-/*.header-link {
-  color: green;
+.home-restaurants-title {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 28px;
 }
 
-.login-signup {
-  background-color: #57AD57;
-  color: #FFF;
-  box-sizing: border-box;
-  text-decoration: none;
-}*/
+.home-restaurants-container {
+}
+
+.home-restaurants-index-items {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 501px;
+  margin-left: 50px;
+}
+
+.home-restaurants-index-item {
+  border-top: 1px solid #e6e6e6;
+  max-width: 500px;
+  max-height: 500px;
+  font-family: sans-serif;
+}
+
+.home-restaurants-index-item-inner {
+  margin: 25px;
+}
+
+.index-item-info {
+  display: block;
+}
+
+//==========================Restaurant Section==========================
+.index-item-top-half {
+  display: block;
+}
+
+.index-item-photo > img {
+  float: left;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+.index-item-primary-attr {
+  float: left;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.index-item-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.index-item-secondary-attr {
+  float: left;
+  display: block;
+  width: 200px;
+}
+
+.index-item-footer-attr {
+  display: block;
+  margin-top: 20px;
+}
+
+.index-item-description {
+  width: 450px;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.index-item-description:hover {
+  cursor: pointer;
+}
+
+.index-item-description:active {
+  overflow: visible;
+  text-overflow: inherit;
+  white-space: normal;
+  transition: 2s;
+}
+
+//---------------------------Star Ratings-------------------------------
+.rating-static {
+  width: 60px;
+  height: 16px;
+  display: block;
+  background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+}
+
+.rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 0; }
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -16px; }
+.rating-45 { background-position: 0 -16px; }
+//======================================================================
+.index-item-location, .index-item-neighborhood, .index-item-phone-number {
+  padding-bottom: 10px;
+}
+
+.index-item-price-range {
+  color: #C90A0A;
+}
+
+.index-item-name:hover, .index-item-photo:hover {
+  cursor: pointer;
+}
+
+.index-item-name:hover {
+  color: #57AD57;
+  transition: 0.5s;
+}

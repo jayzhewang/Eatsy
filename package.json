@@ -28,6 +28,7 @@
     "lodash": "^4.15.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-native": "^0.32.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
@@ -36,5 +37,8 @@
   "engines": {
     "node": "6.2.1",
     "npm": "3.9.3"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.13.0"
   }
 }

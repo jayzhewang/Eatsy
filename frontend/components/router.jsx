@@ -3,6 +3,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
+import RestaurantIndexContainer from './restaurants_index/restaurant_index_container';
+import RestaurantContainer from './restaurant/restaurant_container';
 
 class AppRouter extends React.Component {
   constructor(props){
@@ -29,6 +31,8 @@ class AppRouter extends React.Component {
     return(
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
+          <IndexRoute component={ RestaurantIndexContainer } />
+          <Route path='/restaurants/:id' component ={ RestaurantContainer } />
           <Route path='/login' component={ SessionFormContainer } />
           <Route path='/signup' component={ SessionFormContainer } />
         </Route>

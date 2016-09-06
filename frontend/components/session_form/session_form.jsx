@@ -8,7 +8,9 @@ class SessionForm extends React.Component {
       username: "",
       password: "",
       email: "",
-      age: ""
+      age: "",
+      gender: "",
+      location: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,6 +40,22 @@ class SessionForm extends React.Component {
                 placeholder='Age'
                 value={this.state.age}
                 onChange={this.update('age')}
+                className='login-input' />
+          </label>
+
+          <label>
+              <input type='text'
+                placeholder='Gender'
+                value={this.state.gender}
+                onChange={this.update('gender')}
+                className='login-input' />
+          </label>
+
+          <label>
+              <input type='text'
+                placeholder='Location'
+                value={this.state.location}
+                onChange={this.update('location')}
                 className='login-input' />
           </label>
         </div>

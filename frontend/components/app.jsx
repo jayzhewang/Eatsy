@@ -4,17 +4,10 @@ import GreetingContainer from './greet/greeting_container';
 
 const App = ({children}) => (
 <div>
-  <nav className="navbar navbar-inverse navbar-static-top">
-  	<div className="container">
-
-  		<div className="navbar-header">
-        <div className='navbar-brand'>
-          <Link to="/" className="header-link">Eatsy</Link>
-        </div>
-  		</div>
-
-      <GreetingContainer />
-
+  <nav className="headerbar group">
+  	<div className="navbar group">
+        <Link to="/" className="header-brand">Eatsy</Link>
+        <GreetingContainer />
   	</div>
   </nav>
   {children}
