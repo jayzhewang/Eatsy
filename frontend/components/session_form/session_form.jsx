@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
       location: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   navLink(){
@@ -69,6 +70,12 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  handleGuestLogin(e){
+    e.preventDefault();
+    const user = {username: 'jay', password: 'password'};
+    this.props.processForm({user});
+  }
+
   update(field){
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
@@ -84,44 +91,44 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    return (
-        <div className='login-form-container'>
-            <form onSubmit={this.handleSubmit} className='login-form-box cf'>
-                <div className='login-form-message'>
-                  Welcome to Eatsy
-                  <br/>
-                  Please { this.props.formType } or { this.navLink() }
-                  {this.renderErrors()}
-                </div>
-
-                <div className='container'>
-
-                  <div className='login-form-fill-info'>
-                    <label>
-                      <input type='text'
-                        placeholder='Username'
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                        className='login-input' />
-                    </label>
-
-                    <label>
-                      <input type='password'
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                        className='login-input' />
-                    </label>
-
-                    {this.emailAndAgeLabel()}
-                    <input type='submit' value='Submit' className='login-submit-button'/>
+      return (
+          <div className='login-form-container'>
+              <form onSubmit={this.handleSubmit} className='login-form-box cf'>
+                  <div className='login-form-message'>
+                    Welcome to Eatsy
+                    <br/>
+                    Please { this.props.formType } or { this.navLink() }
+                    {this.renderErrors()}
                   </div>
 
+                  <div className='container'>
 
-                </div>
-            </form>
-        </div>
-    );
+                    <div className='login-form-fill-info'>
+                      <label>
+                        <input type='text'
+                          placeholder='Username'
+                          value={this.state.username}
+                          onChange={this.update('username')}
+                          className='login-input' />
+                      </label>
+
+                      <label>
+                        <input type='password'
+                          placeholder="Password"
+                          value={this.state.password}
+                          onChange={this.update('password')}
+                          className='login-input' />
+                      </label>
+
+                      {this.emailAndAgeLabel()}
+                      <input type='submit' value='Submit' className='login-submit-button'/>
+                    </div>
+
+                    <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
+                  </div>
+              </form>
+          </div>
+      );
   }
 }
 

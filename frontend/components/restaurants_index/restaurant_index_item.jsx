@@ -60,7 +60,6 @@ class RestaurantIndexItem extends React.Component {
           </div>
         </div>
 
-
         <div className="index-item-footer-attr">
           <span className="index-item-description">
             {restaurant.description}
