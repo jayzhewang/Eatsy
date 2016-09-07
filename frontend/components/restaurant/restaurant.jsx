@@ -3,31 +3,8 @@ import STARS from '../star_ratings';
 import ReviewsContainer from '../reviews/reviews_container';
 
 class Restaurant extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      body: "",
-      rating: 0
-    };
-    this.handleCreateReview = this.handleCreateReview.bind(this);
-  }
-
   componentDidMount(){
     this.props.requestSingleRestaurant(this.props.params.id);
-  }
-
-  handleCreateReview(e){
-    e.preventDefault();
-    const review = Object.assign({}, this.state);
-
-    review['user_id'] = this.props.currentUser.id;
-    review['restaurant_id'] = this.props.params.id;
-
-    this.props.createReview(review);
-  }
-
-  update(field){
-    return e => { this.setState({[field]: e.currentTarget.value }); };
   }
 
   render() {
@@ -70,28 +47,8 @@ class Restaurant extends React.Component {
           <content className='restaurant-reviews-body'>
             <div className='restaurant-reviews-left-side'>
 
-              <form className='restaurant-reviews-form' action="#">
-                <div className="restaurant-reviews-form-input">
-                  <div className='restaurant-reviews-star-ratings'>
-
-                  </div>
-
-                  <div className="input">
-
-                    <textarea className="form-textarea"
-                              placeholder="Your reivew will help others learn about greate local restaurants."
-                              value={this.state.body}
-                              onChange={this.update('body')}></textarea>
-                  </div>
-                </div>
-
-                <div className="submit">
-                  <button type="submit" onClick={this.handleCreateReview}>Post Review</button>
-                </div>
-
-              </form>
-
               <ReviewsContainer restaurant={restaurant} />
+
             </div>
 
             <div className='restaurant-reviews-right-side'>

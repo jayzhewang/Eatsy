@@ -2,8 +2,29 @@ import React from 'react';
 // import {withRouter} from 'react-router';
 
 class Reviews extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      body: "",
+      rating: 0
+    };
+    this.handleCreateReview = this.handleCreateReview.bind(this);
+  }
 
-render() {
+  handleCreateReview(e){
+    e.preventDefault();
+    const review = Object.assign({}, this.state);
+    review['user_id'] = this.props.currentUser.id;
+    review['restaurant_id'] = this.props.parent.id;
+
+    this.props.createReview(review);
+  }
+
+  update(field){
+    return e => { this.setState({[field]: e.currentTarget.value }); };
+  }
+
+  render() {
     const reviews = this.props.parent.reviews;
 
     if(reviews === undefined){
@@ -16,6 +37,27 @@ render() {
       } else {
         return (
           <div>
+            <form className='restaurant-reviews-form' action="#">
+              <div className="restaurant-reviews-form-input">
+                <div className='restaurant-reviews-star-ratings'>
+
+                </div>
+
+                <div className="input">
+
+                  <textarea className="form-textarea"
+                            placeholder="Your reivew will help others learn about greate local restaurants."
+                            value={this.state.body}
+                            onChange={this.update('body')}></textarea>
+                </div>
+              </div>
+
+              <div className="submit">
+                <button type="submit" onClick={this.handleCreateReview}>Post Review</button>
+              </div>
+
+            </form>
+
             {
               reviews.map(review => {
                 let userPhoto = "";

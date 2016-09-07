@@ -6,12 +6,12 @@ const mapStateToProps = (state, ownProps) => {
   const parent = (ownProps.restaurant !== undefined) ? ownProps.restaurant : ownProps.user;
   return {
           parent: parent,
-          
+          currentUser: state.session.currentUser
         };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {createReview: () => dispatch(createReview())};
+  return {createReview: (review) => dispatch(createReview(review))};
 };
 
 export default connect(

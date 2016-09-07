@@ -7,16 +7,12 @@ const mapStateToProps = (state, ownProps) => {
   const id = parseInt(ownProps.params.id);
   const restaurant = state.restaurants.find(res=> res.id === id );
 
-  return {
-          restaurant: restaurant,
-          currentUser: state.session.currentUser,
-        };
+  return { restaurant };
 };
 
 
 const mapDispatchToProps = dispatch => ({
   requestSingleRestaurant: (id) => (dispatch(requestSingleRestaurant(id))),
-  createReview: (review) => dispatch(createReview(review))
 });
 
 export default connect(
