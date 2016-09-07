@@ -1,6 +1,5 @@
 import { receiveCurrentUser, receiveErrors } from '../actions/session_actions';
 export const login = function(user, success, error) {
-	debugger;
 	$.ajax({
 		method: 'POST',
 		url: '/api/session',

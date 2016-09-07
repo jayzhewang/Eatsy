@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user_1 = User.create(username: "jay", password: "password", email: "email", age: 23)
+user_1 = User.create(username: "jay", password: "password", email: "email", age: 23, photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473204255/IMG_1384_szmbnp.jpg")
 restaurant_1 = Restaurant.create(name: "Thai Time",
                                  description: "Delicious and authentic Thai cuisine in the Inner Richmond",
                                  location: "315 8th Ave, San Francisco, CA 94118",

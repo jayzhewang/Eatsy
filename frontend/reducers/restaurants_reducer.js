@@ -8,7 +8,7 @@ const RestaurantsReducer = (state = [], action) => {
       return state.concat(restaurants);
     case RestaurantConstants.RECEIVE_SINGLE_RESTAURANT:
       const restaurant = action.restaurant;
-      return state.concat([restaurant]);
+      return merge([], state, [restaurant]);
     default:
       return state;
   }

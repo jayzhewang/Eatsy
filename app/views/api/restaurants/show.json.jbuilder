@@ -8,4 +8,6 @@ json.extract! @restaurant,
               :price_range,
               :phone_number,
               :neighborhood,
-              :photos
+              :photos,
+              :reviews,
+              :users

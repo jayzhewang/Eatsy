@@ -12,6 +12,17 @@ class Api::RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+
+    @reviews = []
+    Review.all.each do |review|
+      @reviews << review if params[:id] == review.restaurant_id
+    end
+
+    @users = []
+    @reviews.each do |review|
+      @users << User.find_by_user_id(review.user_id)
+    end
+    
     render :show
   end
 
