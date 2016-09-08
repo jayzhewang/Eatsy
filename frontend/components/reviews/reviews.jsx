@@ -45,6 +45,7 @@ class Reviews extends React.Component {
       } else {
         return (
           <div>
+            <div className='restaurant-reviews-form-border'>
             <form className='restaurant-reviews-form' action="#">
               <div className="restaurant-reviews-form-input">
                 <div className='restaurant-reviews-star-ratings'>
@@ -53,24 +54,26 @@ class Reviews extends React.Component {
                                        value={this.state.rating}
                                        onStarClick={this.onStarClick.bind(this)}
                                        starColor={'#e5050b'}
+                                       renderStarIcon={()=><span className='star-symbol'>✪</span>}
                   />
                 </div>
 
                 <div className="input">
 
-                  <textarea className="form-textarea"
+                  <textarea className="restaurant-reviews-form-textarea"
                             placeholder="Your reivew will help others learn about greate local restaurants."
                             value={this.state.body}
                             onChange={this.update('body')}></textarea>
                 </div>
               </div>
 
-              <div className="submit">
-                <button type="submit" onClick={this.handleCreateReview}>Post Review</button>
+              <div className="restaurant-reviews-submit group">
+                <span className='star-symbol'>✪</span>
+                <button type="submit" onClick={this.handleCreateReview}> <span className='post'>Post Review</span></button>
               </div>
 
             </form>
-
+            <h1>Recommanded Reviews</h1>
             {
               reviews.map(review => {
                 let userPhoto = "";
@@ -104,10 +107,11 @@ class Reviews extends React.Component {
                     <div className='review-secondary-attr'>
                       <div className='review-rating'>
                         <StarRatingComponent name='starRateStatic'
-                          starCount={5}
-                          value={review.rating}
-                          starColor={'#e5050b'}
-                          editing={false}
+                                             starCount={5}
+                                             value={review.rating}
+                                             starColor={'#e5050b'}
+                                             editing={false}
+                                             renderStarIcon={()=><span className='star-symbol'>✪</span>}
                           />
                       </div>
                       <div className='review-date'>{review.updated_at}</div>
@@ -117,6 +121,7 @@ class Reviews extends React.Component {
                 );
               })
             }
+          </div>
           </div>
         );
       }

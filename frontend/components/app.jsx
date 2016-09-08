@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import GreetingContainer from './greet/greeting_container';
+import Footer from './footer/footer';
 
 const App = ({children}) => (
 <div>
@@ -11,6 +12,7 @@ const App = ({children}) => (
   	</div>
   </nav>
   {children}
+  <Footer />
 </div>
 );
 

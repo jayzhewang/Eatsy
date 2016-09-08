@@ -18,9 +18,25 @@ class SessionForm extends React.Component {
 
   navLink(){
     if(this.props.formType === 'login') {
-      return <Link to='/signup'>Sign Up Instead</Link>;
+      return (
+        <div>New to Eatsy? <Link to='/signup'>Sign Up</Link> Instead</div>
+      );
     } else {
-      return <Link to='/login'>Log In Instead</Link>;
+      return (
+        <div>Discover great local businesses.</div>
+      );
+    }
+  }
+
+  navMessage(){
+    if(this.props.formType === 'login') {
+      return (
+        <h1 className='login-form-message-switch'>Log In | Eatsy</h1>
+      );
+    } else {
+      return (
+        <h1 className='login-form-message-switch'>Sign Up | Eatsy</h1>
+      );
     }
   }
 
@@ -28,7 +44,7 @@ class SessionForm extends React.Component {
     if(this.props.formType !== 'login'){
       return (
         <div>
-          <label>
+          <label className='input-field'>
               <input type='text'
                 placeholder="Email"
                 value={this.state.email}
@@ -36,7 +52,7 @@ class SessionForm extends React.Component {
                 className='login-input' />
           </label>
 
-          <label>
+          <label className='input-field'>
               <input type='text'
                 placeholder='Age'
                 value={this.state.age}
@@ -44,7 +60,7 @@ class SessionForm extends React.Component {
                 className='login-input' />
           </label>
 
-          <label>
+          <label className='input-field'>
               <input type='text'
                 placeholder='Gender'
                 value={this.state.gender}
@@ -52,7 +68,7 @@ class SessionForm extends React.Component {
                 className='login-input' />
           </label>
 
-          <label>
+          <label className='input-field'>
               <input type='text'
                 placeholder='Location'
                 value={this.state.location}
@@ -92,19 +108,20 @@ class SessionForm extends React.Component {
 
   render(){
       return (
-          <div className='login-form-container'>
+          <div className='login-form-container group'>
               <form onSubmit={this.handleSubmit} className='login-form-box cf'>
                   <div className='login-form-message'>
-                    Welcome to Eatsy
-                    <br/>
-                    Please { this.props.formType } or { this.navLink() }
                     {this.renderErrors()}
                   </div>
 
-                  <div className='container'>
+                  <div className='login-form-fill-info'>
+                    <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
+                    <div className='login-form-text'>
+                      <h3>
+                        { this.navLink() }
+                      </h3>
 
-                    <div className='login-form-fill-info'>
-                      <label>
+                      <label className='input-field'>
                         <input type='text'
                           placeholder='Username'
                           value={this.state.username}
@@ -112,7 +129,7 @@ class SessionForm extends React.Component {
                           className='login-input' />
                       </label>
 
-                      <label>
+                      <label className='input-field'>
                         <input type='password'
                           placeholder="Password"
                           value={this.state.password}
@@ -121,13 +138,25 @@ class SessionForm extends React.Component {
                       </label>
 
                       {this.emailAndAgeLabel()}
-                      <input type='submit' value='Submit' className='login-submit-button'/>
-                      <br/>
-                      <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
+
+                      <div className='input-field-submit'>
+                        <input type='submit' value='Submit' className='login-submit-button'/>
+                        <br/>
+                        <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
+                      </div>
                     </div>
 
                   </div>
               </form>
+
+              <div className='login-form-image'>
+            
+                  <img src='http://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
+                    atl='login-img'
+                    height='450'
+                    width='450' />
+
+              </div>
           </div>
       );
   }

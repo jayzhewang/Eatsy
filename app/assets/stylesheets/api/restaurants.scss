@@ -13,11 +13,25 @@
   margin: auto;
 }
 
+.home-restaurants-discovery {
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+  display: block;
+  padding: 25px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+.home-restaurants-discovery-container {
+  // border-top: 1px solid #ccc;
+  width: 74%;
+  margin: auto;
+  padding-top: 20px;
+}
+
 .home-restaurants-index-items {
-  margin-top: 10px;
-  margin-bottom: 10px;
   max-width: 501px;
-  margin-left: 50px;
+  margin: 10px 0 10px 15px;
 }
 
 .home-restaurants-index-item {
@@ -118,9 +132,10 @@
   cursor: none;
 }
 
-.index-item-price-range {
+.price-range {
   color: #C90A0A;
   display: block;
+  padding-left: 4px;
 }
 
 .index-item-info {

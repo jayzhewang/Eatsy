@@ -14,6 +14,7 @@
  @import './api/restaurants.scss';
  @import './api/sessions.scss';
  @import './api/restaurant.scss';
+ @import './api/reviews.scss';
 
 //--------------------------------DEFAULT-------------------------------
 html, body, header, footer, section, article, div,
@@ -51,14 +52,15 @@ form, label, input, textarea, button {
 }
 
 .map {
-  height: 200px;
-  width: 200px;
+  height: 225px;
+  width: 290px;
+  border: 1px solid #cccccc;
 }
 
 //----------------------------------------------------------------------
 
 .headerbar {
-  background: #EAE4E4;
+  background: #0F172B;
   font-family: sans-serif;
 }
 
@@ -69,14 +71,14 @@ form, label, input, textarea, button {
 
 .navbar {
   display: block;
-  width: 900px;
+  width: 71%;
   margin: auto;
   padding: 15px;
-  background: #EAE4E4;
+  background: #0F172B;
 }
 
 .header-brand {
-  color: green;
+  color: #fff;
   font-size: 36px;
   float: left;
 }
@@ -125,4 +127,45 @@ form, label, input, textarea, button {
 .greeting-innertext {
   display: block;
   padding-top: 5px;
+}
+
+//-------------------------------FOOTER---------------------------------
+.footer {
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+  display: block;
+  padding: 25px;
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+}
+
+.footer-container {
+  // border-top: 1px solid #ccc;
+  width: 74%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.footer-about > p {
+  text-align: center;
+}
+
+.footer-about-fineprint {
+  text-align: center;
+  font-size: 8px;
+}
+
+.footer-image-github {
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: auto;
+  padding: 5px 0;
+  padding: 0;
+}
+
+.footer-image-github:hover {
+  background-color: #57AD57;
+  transition: 0.3s;
 }

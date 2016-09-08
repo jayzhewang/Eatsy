@@ -40,10 +40,11 @@ class RestaurantIndexItem extends React.Component {
                                    value={rating}
                                    starColor={'#e5050b'}
                                    editing={false}
+                                   renderStarIcon={()=><span className='star-symbol'>✪</span>}
               />
             </span>
 
-            <span className="index-item-price-range">
+            <span className="price-range">
               {restaurant.price_range}
             </span>
           </div>
