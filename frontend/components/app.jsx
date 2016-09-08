@@ -8,6 +8,7 @@ const App = ({children}) => (
   <nav className="headerbar group">
   	<div className="navbar group">
         <Link to="/" className="header-brand">Eatsy</Link>
+
         <GreetingContainer />
   	</div>
   </nav>
