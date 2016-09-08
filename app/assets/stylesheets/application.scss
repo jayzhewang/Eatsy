@@ -11,9 +11,9 @@
  * file per style scope.
  *
  */
- @import './star_rating.scss';
  @import './api/restaurants.scss';
  @import './api/sessions.scss';
+ @import './api/restaurant.scss';
 
 //--------------------------------DEFAULT-------------------------------
 html, body, header, footer, section, article, div,
@@ -48,6 +48,11 @@ form, label, input, textarea, button {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.map {
+  height: 200px;
+  width: 200px;
 }
 
 //----------------------------------------------------------------------

@@ -8,7 +8,7 @@ export const createReview = review => ({
   review
 });
 
-export const receiveReview = (data) => ({
+export const receiveReview = review => ({
   type: ReviewConstants.RECEIVE_REVIEW,
-  data
+  review
 });

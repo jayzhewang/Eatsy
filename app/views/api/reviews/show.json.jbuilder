@@ -1,5 +1,9 @@
 json.extract! @review,
+              :id,
               :user_id,
               :restaurant_id,
               :body,
-              :rating
+              :rating,
+              :cool,
+              :funny,
+              :useful

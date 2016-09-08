@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import STARS from '../star_ratings';
+import StarRatingComponent from 'react-star-rating-component';
 
 class RestaurantIndexItem extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class RestaurantIndexItem extends React.Component {
     const photos = restaurant.photos.split(" ");
     const primary = photos[0];
 
-    const star = <span className={`rating-static ${STARS[restaurant.rating]}`}></span>;
+    const rating = restaurant.rating;
     return (
       <div className="restaurant-index-item">
         <div className="index-item-info">
@@ -35,7 +35,12 @@ class RestaurantIndexItem extends React.Component {
             </span>
 
             <span className="index-item-rating">
-              {star}
+              <StarRatingComponent name='starRateStatic'
+                                   starCount={5}
+                                   value={rating}
+                                   starColor={'#e5050b'}
+                                   editing={false}
+              />
             </span>
 
             <span className="index-item-price-range">

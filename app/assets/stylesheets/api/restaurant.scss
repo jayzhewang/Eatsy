@@ -1,0 +1,122 @@
+.restaurant-content{
+  width: 1000px;
+  margin: auto;
+  font-family: sans-serif;
+}
+//----------------------------------------------------------------------
+.restaurant-top {
+  display: block;
+  border: 1px solid black;
+}
+
+.restaurant-top-left-side {
+  float: left;
+}
+
+.restaurant-top-right-side {
+  float: right;
+}
+
+//----------------------------------------------------------------------
+.restaurant-middle {
+  display: block;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.restaurant-middle-map {
+  display: block;
+  float: left;
+}
+
+.restaurant-middle-pictures {
+  display: block;
+  float: right;
+}
+
+//----------------------------------------------------------------------
+.restaurant-bottom {
+  display: block;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.restaurant-bottom-reviews {
+  display: block;
+  float: left;
+  border-bottom: 1px solid #ccc;
+  width: 66.666%;
+}
+
+.restaurant-bottom-sidebar {
+  display: block;
+  float: right;
+  border: 1px solid red;
+  width: 30%;
+}
+
+.review {
+  border-top: 1px solid #ccc;
+}
+
+.review-primary-attr {
+  display: block;
+  float: left;
+  width: 40%;
+}
+
+.review-primary-attr-left {
+  display: block;
+  float: left;
+  padding: 15px 0 0 15px;
+}
+
+.review-primary-attr-left > img {
+  border-radius: 50%;
+}
+
+.review-primary-attr-right {
+  display: block;
+  float: right;
+  padding: 15px 40px 0 0;
+}
+
+.review-secondary-attr {
+  display: block;
+  float: right;
+  width: 57%;
+  padding: 15px 15px 15px 0;
+}
+
+//----------------------------------------------------------------------
+
+.restaurant-bottom-sidebar-hours > h1 {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+  color: #e5050b;
+}
+
+.restaurant-bottom-sidebar-info > h1 {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+  color: #e5050b;
+}
+
+.sidebar-info {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.sidebar-info-left {
+  display: block;
+  float: left;
+}
+
+.sidebar-info-right {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  font-weight: bold;
+}

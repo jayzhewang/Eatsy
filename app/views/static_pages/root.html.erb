@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script id='bootstrap-current-user' type='text/javascript'>
       <% if signed_in? %>
-        window.currentUser = <%= render("api/users/show.json.jbuilder", user: current_user).html_safe %>
+        window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
       <% end %>
     </script>
     <!-- <link rel='stylesheet' href='../../assets/stylesheets/modal.css' > -->
