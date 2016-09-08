@@ -24,6 +24,7 @@ class Restaurant extends React.Component {
           <header className="restaurant-top group">
             <div className="restaurant-top-left-side">
               <h1>{restaurant.name}</h1>
+              <div className='restaurant-topleft'>
                 <StarRatingComponent name='starRateStatic'
                                      starCount={5}
                                      value={rating}
