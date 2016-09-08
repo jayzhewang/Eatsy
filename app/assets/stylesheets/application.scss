@@ -91,7 +91,7 @@ form, label, input, textarea, button {
   width: 200px;
 }
 
-.greeting-text {
+.greeting-buttons {
   color: white;
   background-color: #57AD57;
   display: block;
@@ -101,9 +101,28 @@ form, label, input, textarea, button {
   display: inline-block;
   margin: 10px 10px 10px 10px;
   text-align: center;
+  padding-top: 9px 9px 15px 9px;
 }
 
-.greeting-text-align-center {
-  margin-top: 5px;
+.greeting-text {
   display: block;
+  float: right;
+}
+
+.greeting-buttons-log-out {
+  color: white;
+  background-color: #ccc;
+  display: block;
+  margin-right: 0px!important;
+  width: 90px;
+  height: 30px;
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+  padding-top: 9px 9px 15px 9px;
+}
+
+.greeting-innertext {
+  display: block;
+  padding-top: 5px;
 }
