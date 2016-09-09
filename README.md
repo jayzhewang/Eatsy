@@ -1,4 +1,4 @@
-<img src=‘http://res.cloudinary.com/cloudlicious/image/upload/v1473448065/'>
+<img src=‘http://res.cloudinary.com/cloudlicious/image/upload/v1473448065/' />
 
 Eatsy is a crowd sourced restaurant review app.
 
