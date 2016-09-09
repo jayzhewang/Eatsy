@@ -4,7 +4,8 @@ import { RestaurantConstants,
        } from '../actions/restaurant_actions';
 
 import { fetchRestaurants,
-         fetchSingleRestaurant
+         fetchSingleRestaurant,
+         queryRestaurants
        } from '../util/restaurant_api_util';
 
 const RestaurantsMiddleware = ({getState, dispatch}) => next => action => {
@@ -17,6 +18,10 @@ const RestaurantsMiddleware = ({getState, dispatch}) => next => action => {
       const success1 = data => dispatch(receiveSingleRestaurant(data));
       const resId = action.id;
       fetchSingleRestaurant(resId, success1);
+      return next(action);
+    case RestaurantConstants.QUERY_RESTAURANTS:
+      const successQuery = data => dispatch(receiveRestaurants(data));
+      queryRestaurants(action.query, successQuery);
       return next(action);
     default:
       return next(action);

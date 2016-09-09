@@ -1,23 +1,43 @@
 import React from 'react';
 
-import RestaurantIndex from '../restaurants_index/restaurant_index';
-import RestaurantMap from '../restaurant_map';
-import FilterForm from './filter_form';
+class Search extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      category: "",
+      location: ""
+    };
 
-const Search = ({restaurants, location, updateFilter}) => (
-  <div className='map-pane'>
-    <div className='left-half'>
-      <RestaurantMap restaurants={restaurants}
-                     updateFilter={updateFilter}
-                     singleRestaurant={false} />
-    </div>
+    this.handleSearch = this.handleSearch.bind(this);
+    this.restaurants = this.props.restaurants;
+  }
 
-    <div className='right-half'>
-        <FilterForm location={location}
-                    updateFilter={updateFilter} />
-                  <RestaurantIndex restaurants={restaurants} />
-    </div>
-  </div>
-);
+  handleSearch(e){
+    e.preventDefault();
+    this.props.queryRestaurants(this.state.category);
+  }
+
+  update(field){
+    return e => { this.setState({[field]: e.currentTarget.value }); };
+  }
+
+  render(){
+    return(
+      <div>
+        <form className='search-field group'>
+          <input type='text'
+            value={this.state.category}
+            onChange={this.update('category')}
+            placeholder="Category" />
+
+          <button type="submit"
+            onClick={this.handleSearch}>
+            <span className='search'>Search</span>
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default Search;

@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { updateFilter } from '../../actions/filter_actions';
+import { queryRestaurants } from '../../actions/restaurant_actions';
 
 const mapStateToProps = state => ({
   restaurants: state.restaurants,
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  queryRestaurants: (query) => dispatch(queryRestaurants(query))
 });
 
 export default connect(

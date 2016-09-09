@@ -50,6 +50,7 @@
     border-radius: 5px;
     padding: 5px 0 5px 15px;
     margin-bottom: 10px;
+    visibility: hidden;
 }
 
 .restaurant-top-right-side-review:hover, .restaurant-top-right-side-review > button:hover {
@@ -127,6 +128,7 @@
   // border: 1px solid black;
   padding: 20px;
   min-width: 1045px;
+  margin: auto;
 }
 
 .restaurant-bottom-sidebar {

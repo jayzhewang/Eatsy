@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { requestRestaurants } from '../actions/restaurant_actions';
 
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
@@ -12,6 +13,7 @@ class AppRouter extends React.Component {
     super(props);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
+    this.reloadRestaurants = this.reloadRestaurants.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -19,6 +21,10 @@ class AppRouter extends React.Component {
     if (!currentUser){
       replace('login');
     }
+  }
+
+  reloadRestaurants(){
+    this.props.requestRestaurants();
   }
 
   _redirectIfLoggedIn(nextState, replace){
@@ -32,7 +38,7 @@ class AppRouter extends React.Component {
     return(
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
-          <IndexRoute component={ RestaurantIndexContainer } />
+          <IndexRoute component={ RestaurantIndexContainer } onEnter={this.reloadRestaurants} />
           <Route path='/restaurants/:id' component={ RestaurantContainer } />
           <Route path='/users/:id' component={ UserContainer } />
           <Route path='/login' component={ SessionFormContainer } />

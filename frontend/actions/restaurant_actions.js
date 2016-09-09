@@ -2,7 +2,8 @@ export const RestaurantConstants = {
   RECEIVE_RESTAURANTS: "RECEIVE_RESTAURANTS",
   REQUEST_RESTAURANTS: "REQUEST_RESTAURANTS",
   REQUEST_SINGLE_RESTAURANT: "REQUEST_SINGLE_RESTAURANT",
-  RECEIVE_SINGLE_RESTAURANT: "RECEIVE_SINGLE_RESTAURANT"
+  RECEIVE_SINGLE_RESTAURANT: "RECEIVE_SINGLE_RESTAURANT",
+  QUERY_RESTAURANTS: "QUERY_RESTAURANTS"
 };
 
 export const receiveRestaurants = restaurants => ({
@@ -12,6 +13,11 @@ export const receiveRestaurants = restaurants => ({
 
 export const requestRestaurants = () => ({
   type: RestaurantConstants.REQUEST_RESTAURANTS
+});
+
+export const queryRestaurants = (query) => ({
+  type: RestaurantConstants.QUERY_RESTAURANTS,
+  query
 });
 
 export const requestSingleRestaurant = (id) => ({

@@ -13,3 +13,12 @@ export const fetchSingleRestaurant = (resId, success) => {
     success
   });
 };
+
+export const queryRestaurants = (query, success) => {
+  $.ajax({
+    method: 'GET',
+    url: 'api/restaurants',
+    data: {query},
+    success: success
+  });
+};

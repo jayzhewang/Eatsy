@@ -1,6 +1,11 @@
 class Api::RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    if params[:query]
+      @restaurants = Restaurant.where('name ILIKE ?', "%#{params[:query]}%")
+    else
+      @restaurants = Restaurant.all
+    end
+
     render :index
   end
 

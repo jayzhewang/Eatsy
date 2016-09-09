@@ -1,0 +1,29 @@
+.search-field {
+  display: block;
+  float: left;
+  margin: 4px 0 0 200px;
+}
+
+.search-field > input {
+  float: left;
+  display: block;
+  height: 40px;
+  width: 355px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+.search-field > button {
+  float: left;
+  display: block;
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: #57AD57;
+  margin: 5px 0 0 15px;
+  text-align: center;
+}
