@@ -10,13 +10,29 @@ class SessionForm extends React.Component {
       email: "",
       age: "",
       gender: "",
-      location: ""
+      location: "",
+      photo: [
+        'http://res.cloudinary.com/cloudlicious/image/upload/v1473386961/Screen_Shot_2016-09-08_at_7.04.38_PM_dq22yy.png',
+        'http://res.cloudinary.com/cloudlicious/image/upload/v1473386961/Screen_Shot_2016-09-08_at_7.07.46_PM_ynxepp.png',
+        'http://res.cloudinary.com/cloudlicious/image/upload/v1473386961/Screen_Shot_2016-09-08_at_7.08.51_PM_wk0qcr.png'
+      ][Math.floor(Math.random() * 3)]
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn(){
+    if (this.props.loggedIn){
+      hashHistory.push("/");
+    }
+  }
+
   navLink(){
+
     if(this.props.formType === 'login') {
       return (
         <div>New to Eatsy? <Link to='/signup'>Sign Up</Link> Instead</div>
@@ -31,17 +47,19 @@ class SessionForm extends React.Component {
   navMessage(){
     if(this.props.formType === 'login') {
       return (
-        <h1 className='login-form-message-switch'>Log In | Eatsy</h1>
+        <div className='login-form-message-switch'>Log In | Eatsy</div>
       );
     } else {
       return (
-        <h1 className='login-form-message-switch'>Sign Up | Eatsy</h1>
+        <div className='login-form-message-switch'>Sign Up | Eatsy</div>
       );
     }
   }
 
   emailAndAgeLabel(){
+
     if(this.props.formType !== 'login'){
+
       return (
         <div>
           <label className='input-field'>
@@ -84,6 +102,19 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+    this.setState({
+      username: "",
+      password: "",
+      email: "",
+      age: "",
+      gender: "",
+      location: "",
+      photo: [
+        'http://res.cloudinary.com/cloudlicious/image/upload/c_scale,h_512,q_100/v1473382050/simpsons-1_ddtqa6.png',
+        'http://res.cloudinary.com/cloudlicious/image/upload/v1473382087/simpsons-2_lyajvs.png',
+        'http://res.cloudinary.com/cloudlicious/image/upload/v1473382143/simpsons-1_hda7st.png'
+      ][Math.floor(Math.random() * 3)]
+    });
   }
 
   handleGuestLogin(e){
@@ -150,9 +181,9 @@ class SessionForm extends React.Component {
               </form>
 
               <div className='login-form-image'>
-            
+
                   <img src='http://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
-                    atl='login-img'
+                    alt='login-img'
                     height='450'
                     width='450' />
 

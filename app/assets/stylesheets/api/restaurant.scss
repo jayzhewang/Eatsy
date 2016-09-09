@@ -13,6 +13,7 @@
   display: block;
   float: left;
   width: 100%;
+  min-width: 907px;
   height: 400px;
   background-color: #f5f5f5;
   margin-bottom: 80px;
@@ -45,6 +46,7 @@
   display: block;
   // border: 1px solid black;
   width: 71%;
+  min-width: 907px;
   margin: auto;
 }
 
@@ -60,10 +62,12 @@
 .restaurant-middle-map > h3 {
   font-weight: bold;
   padding-top: 5px;
+  max-width: 291px;
 }
 
 .restaurant-middle-map > div {
   padding-top: 5px;
+  max-width: 291px;
 }
 
 .restaurant-middle-pictures {
@@ -78,6 +82,7 @@
   display: block;
   // border: 1px solid black;
   padding: 20px;
+  min-width: 812px;
 }
 
 .restaurant-bottom-sidebar {
@@ -91,6 +96,7 @@
 
 .review {
   border-top: 1px solid #ccc;
+  min-width: 510px;
 }
 
 .review:last-child {

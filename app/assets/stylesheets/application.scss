@@ -111,6 +111,13 @@ form, label, input, textarea, button {
   float: right;
 }
 
+.greeting-user-photo {
+  display: block;
+  float: left;
+  width: 49px;
+  height: 49px;
+}
+
 .greeting-buttons-log-out {
   color: white;
   background-color: #ccc;
@@ -122,6 +129,7 @@ form, label, input, textarea, button {
   margin: 10px 10px 10px 10px;
   text-align: center;
   padding-top: 9px 9px 15px 9px;
+  float: right;
 }
 
 .greeting-innertext {
@@ -146,6 +154,10 @@ form, label, input, textarea, button {
   padding-top: 20px;
 }
 
+.footer-about {
+  margin-bottom: 5px;
+}
+
 .footer-about > p {
   text-align: center;
 }
@@ -153,6 +165,7 @@ form, label, input, textarea, button {
 .footer-about-fineprint {
   text-align: center;
   font-size: 8px;
+  margin: 5px 0;
 }
 
 .footer-image-github {

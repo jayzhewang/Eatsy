@@ -14,7 +14,7 @@ class Greeting extends React.Component {
         return ( <div>Loading...</div> );
       } else {
         return (
-          <hgroup className='greeting-text'>
+          <hgroup className='greeting-text group'>
             <h2 className='greeting-user-photo'>
               <img src={`${this.props.currentUser.photo}`}
                 alt='profile pic'

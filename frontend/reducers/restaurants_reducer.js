@@ -12,7 +12,7 @@ const RestaurantsReducer = (state = [], action) => {
       return merge([], state, [restaurant]);
     case ReviewConstants.RECEIVE_REVIEW:
       const newState = merge([], state);
-      newState[0].reviews.push(action.review);
+      newState[0].reviews.unshift(action.review);
       return newState;
     default:
       return state;

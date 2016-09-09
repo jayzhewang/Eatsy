@@ -19,6 +19,7 @@ class Reviews extends React.Component {
     review['user_id'] = this.props.currentUser.id;
     review['restaurant_id'] = this.props.parent.id;
     this.props.createReview(review);
+    this.setState({body: "", rating: 5});
   }
 
   update(field){

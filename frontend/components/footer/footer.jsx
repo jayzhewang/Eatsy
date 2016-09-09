@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <div className='footer group'>
         <div className='footer-container'>
           <div className='footer-about'>
-            <p>Eatsy is a crowd sourced restaurant review app, created by me, as a fullstack project at App Academy</p>
+            <p>Eatsy is a crowd sourced restaurant review app, created by me, as my fullstack project at App Academy</p>
             <p>Eatsy demonstrates skills I've learned on Ruby on Rails and React/Redux</p>
           </div>
           <div className='footer-image-github'>
