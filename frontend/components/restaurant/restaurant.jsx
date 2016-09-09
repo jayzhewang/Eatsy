@@ -4,8 +4,18 @@ import Map from '../map/map.jsx';
 import StarRatingComponent from 'react-star-rating-component';
 
 class Restaurant extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.showForm = false;
+  }
+
   componentDidMount(){
     this.props.requestSingleRestaurant(this.props.params.id);
+  }
+
+  _showForm(){
+    this.showForm = true;
   }
 
   render() {
@@ -15,8 +25,15 @@ class Restaurant extends React.Component {
       const restaurant = this.props.restaurant;
       const photos = restaurant.photos.split(" ");
       const primary = photos[0];
+      const secondary = photos[1];
+      const tertiary = photos[2];
       const rating = restaurant.rating;
       const yesNo = { true: "Yes", false: "No"};
+      const hours = restaurant.hours;
+      const hoursArray = [];
+      hours.split('--').forEach(hour=>{
+        hoursArray.push(<li className="restaurant-hour-list">{hour}</li>);
+      });
 
       return (
         <div className='restaurant'>
@@ -36,8 +53,9 @@ class Restaurant extends React.Component {
                 <div className="price-range">{restaurant.price_range}</div>
               </div>
               <div className="restaurant-top-right-side">
-                <button type="button">Write a Review</button>
-                <button type="button">Add Photo</button>
+                <div className='restaurant-top-right-side-review'>
+                  <button type="button" onClick={this._showForm}>Write a Review</button>
+                </div>
               </div>
             </header>
 
@@ -49,8 +67,16 @@ class Restaurant extends React.Component {
                 <div>{restaurant.neighborhood}</div>
                 <div>{restaurant.phone_number}</div>
               </div>
-              <div className='restaurant-middle-pictures'>
-                <img src={`${primary}`} alt='front picture' height="250" width="250"/>
+              <div className='restaurant-middle-pictures group'>
+                <div className='primary'>
+                  <img src={`${primary}`} alt='front picture' height="235" width="235"/>
+                </div>
+                <div className='secondary'>
+                  <img src={`${secondary}`} alt='front picture' height="275" width="275"/>
+                </div>
+                <div className='tertiary'>
+                  <img src={`${tertiary}`} alt='front picture' height="235" width="235"/>
+                </div>
               </div>
             </header>
 
@@ -60,13 +86,13 @@ class Restaurant extends React.Component {
 
             <content className="restaurant-bottom group">
               <div className="restaurant-bottom-reviews">
-                <ReviewsContainer restaurant={restaurant} />
+                <ReviewsContainer restaurant={restaurant} showForm={this.showForm} />
               </div>
 
               <div className="restaurant-bottom-sidebar">
                 <div className='restaurant-bottom-sidebar-hours'>
                   <h1>Hours</h1>
-                  <div>{restaurant.hours}</div>
+                  <div><ul>{hoursArray}</ul></div>
                 </div>
 
                 <div className='restaurant-bottom-sidebar-info'>

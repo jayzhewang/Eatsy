@@ -8,9 +8,16 @@
   font-size: 28px;
 }
 
+.home-restaurants-title > div {
+  display: inline;
+  font-weight: bold;
+  color: 0F172B;
+}
+
 .home-restaurants-container {
   width: 1000px;
   margin: auto;
+  display: flex;
 }
 
 .home-restaurants-discovery {
@@ -29,9 +36,41 @@
   padding-top: 20px;
 }
 
+.home-restaurants-index-items-container {
+  display: flex;
+  border-right: 1px solid #ccc;
+  padding-right: 30px;
+}
+
 .home-restaurants-index-items {
-  max-width: 501px;
-  margin: 10px 0 10px 15px;
+  // max-width: 501px;
+  // margin: 0 50px 0 0;
+}
+
+.home-restaurants-index-photos {
+  height: 500px;
+  width: 462px;
+  padding-left: 30px;
+  // border: 1px solid red;
+}
+
+.home-restaurants-single-photo {
+  list-style: none;
+  float:left;
+  margin: 5px;
+  display: block;
+}
+
+.home-restaurants-single-photo > img {
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+.home-restaurants-single-photo > img:hover{
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
 .home-restaurants-index-item {
@@ -39,6 +78,10 @@
   max-width: 500px;
   max-height: 500px;
   font-family: sans-serif;
+}
+
+.home-restaurants-index-item:last-child {
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .home-restaurants-index-item-inner {
@@ -97,6 +140,7 @@
   border-radius: 50%;
   width: 90px;
   height: 90px;
+  object-fit: cover;
 }
 
 .index-item-photo {

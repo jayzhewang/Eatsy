@@ -4,9 +4,11 @@ import Reviews from './reviews';
 
 const mapStateToProps = (state, ownProps) => {
   const parent = (ownProps.restaurant !== undefined) ? ownProps.restaurant : ownProps.user;
+
   return {
           parent: parent,
-          currentUser: state.session.currentUser
+          currentUser: state.session.currentUser,
+          showForm: ownProps.showForm
         };
 };
 

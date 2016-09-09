@@ -41,6 +41,27 @@
   float: right;
 }
 
+.restaurant-top-right-side-review {
+    width: 135px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    background: #e5050b;
+    border-radius: 5px;
+    padding: 5px 0 5px 15px;
+    margin-bottom: 10px;
+}
+
+.restaurant-top-right-side-review:hover, .restaurant-top-right-side-review > button:hover {
+  cursor: pointer;
+}
+
+.restaurant-top-right-side-review > button {
+  color: #fff;
+  padding-left: 12px;
+  float: left;
+  padding: 10px 0 0 5px;
+}
+
 //----------------------------------------------------------------------
 .restaurant-middle {
   display: block;
@@ -73,8 +94,29 @@
 .restaurant-middle-pictures {
   display: block;
   float: left;
-  width: 65%;
-  border: 1px solid red;
+  // border: 1px solid red;
+}
+
+.restaurant-middle-pictures > div {
+  display: block;
+  float: left;
+}
+
+.restaurant-middle-pictures > div > img {
+  display: block;
+  object-fit: cover;
+}
+
+.primary {
+  padding-top: 43px;
+}
+
+.secondary {
+  padding-top: 23px;
+}
+
+.tertiary {
+  padding-top: 43px;
 }
 
 //----------------------------------------------------------------------
@@ -82,7 +124,7 @@
   display: block;
   // border: 1px solid black;
   padding: 20px;
-  min-width: 812px;
+  min-width: 1045px;
 }
 
 .restaurant-bottom-sidebar {
@@ -103,7 +145,8 @@
 
 .restaurant-reviews-form-border {
   border-right: 1px solid #cccccc;
-  padding: 0 25px 0 0;
+  padding: 0 35px 0 0;
+  min-width: 675px;
 }
 
 .restaurant-reviews-form-border > h1 {
@@ -134,6 +177,10 @@
   margin-bottom: 10px;
 }
 
+.restaurant-reviews-submit:hover, .restaurant-reviews-submit > button:hover {
+  cursor: pointer;
+}
+
 .restaurant-reviews-submit > button {
   color: #fff;
   padding-left: 10px;
@@ -150,6 +197,11 @@
   font-size: 16px;
   margin: 0px 0 5px 0;
   color: #e5050b;
+  max-width: 240px;
+}
+
+.restaurant-hour-list {
+  list-style: none;
 }
 
 .restaurant-bottom-sidebar-info > h1 {

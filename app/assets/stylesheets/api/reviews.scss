@@ -5,9 +5,13 @@
   font-size: 30px;
 }
 
+.review-date {
+  padding-bottom: 5px;
+}
+
 .review {
   border-top: 1px solid #ccc;
-  min-width: 510px;
+  min-width: 650px;
   padding-left: 20px;
 }
 
@@ -19,6 +23,7 @@
   display: block;
   float: left;
   width: 40%;
+  min-width: 251px;
 }
 
 .review-primary-attr-left {
@@ -28,7 +33,9 @@
 }
 
 .review-primary-attr-left > img {
+  display: block;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .review-primary-attr-right {
