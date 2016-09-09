@@ -4,3 +4,43 @@
 .star-symbol {
   font-size: 30px;
 }
+
+.review {
+  border-top: 1px solid #ccc;
+  min-width: 510px;
+  padding-left: 20px;
+}
+
+.review:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.review-primary-attr {
+  display: block;
+  float: left;
+  width: 40%;
+}
+
+.review-primary-attr-left {
+  display: block;
+  float: left;
+  padding: 15px 0 0 15px;
+}
+
+.review-primary-attr-left > img {
+  border-radius: 50%;
+}
+
+.review-primary-attr-right {
+  display: block;
+  float: left;
+  width: 35%;
+  padding: 15px 40px 0 25px;
+}
+
+.review-secondary-attr {
+  display: block;
+  float: right;
+  width: 57%;
+  padding: 15px 15px 15px 0;
+}

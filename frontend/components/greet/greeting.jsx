@@ -15,12 +15,12 @@ class Greeting extends React.Component {
       } else {
         return (
           <hgroup className='greeting-text group'>
-            <h2 className='greeting-user-photo'>
+            <div className='greeting-user-photo'>
               <img src={`${this.props.currentUser.photo}`}
                 alt='profile pic'
                 height='50'
                 width='50'/>
-            </h2>
+            </div>
 
             <button className='greeting-buttons-log-out'
               onClick={this.props.logout}>

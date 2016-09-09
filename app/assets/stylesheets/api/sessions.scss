@@ -11,24 +11,54 @@
   display: block;
   width: 74%;
   margin: auto;
-  min-width: 900px;;
+  min-width: 840px;;
+}
+
+.login-form-container-bottom > div {
+  min-width: 500px;
+  padding: 100px 200px 0 200px;
+  width: 65%;
+  //
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  position: relative;
+}
+
+.login-form-image {
+  display: block;
+  float: right;
+  padding-top: 5.5px;
+}
+
+.login-form-image > img {
+  border-radius: 50%;
+  float: left;
+}
+
+.login-form-message {
+  text-align: center;
+  width: 100%;
 }
 
 .login-form-fill-info {
-  display: block;
-  box-sizing: border-box;
-  width: 300px;
-  margin-left: 33px;
-  float: left;
-  font-family: sans-serif;
+  padding-right: 100px;
+}
+
+.login-form-return-user {
+  padding-top: 73.5px;
+}
+
+.login-form-new-user {
+  // padding-top: 20px;
 }
 
 .login-form-message-switch {
   font-size: 26px;
   font-weight: bold;
   color: #0F172B;
-  padding-top: 50px;
   margin-bottom: 18px;
+  width: 100%;
 }
 
 .login-form-text {
@@ -66,10 +96,6 @@
   box-sizing: border-box;
 }
 
-.login-form-message {
-  text-align: center;
-}
-
 .login-submit-form {
   margin-left: 150px;
   width: 100px;
@@ -83,21 +109,14 @@
 }
 
 .login-submit-button:hover {
-  background-color: #11939A;
+  background-color: #0F172B;
 }
 
-.login-form-box {
-  display: block;
-  width: 50%;
-  height: 100%;
-  float: left;
+.login-form-sign-up {
+  font-weight: bold;
 }
 
-.login-form-image {
-  display: block;
-  padding: 120px 0 0 17px;
-}
-
-.login-form-image > img {
-  border-radius: 50%;
+.login-form-sign-up:hover {
+  color: #57AD57;
+  transition: 0.3s;
 }

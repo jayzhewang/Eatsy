@@ -94,46 +94,6 @@
   // border: 1px solid red;
 }
 
-.review {
-  border-top: 1px solid #ccc;
-  min-width: 510px;
-}
-
-.review:last-child {
-  border-bottom: 1px solid #ccc;
-}
-
-.review-primary-attr {
-  display: block;
-  float: left;
-  width: 40%;
-}
-
-.review-primary-attr-left {
-  display: block;
-  float: left;
-  padding: 15px 0 0 15px;
-}
-
-.review-primary-attr-left > img {
-  border-radius: 50%;
-}
-
-.review-primary-attr-right {
-  display: block;
-  float: right;
-  width: 35%;
-  padding: 15px 40px 0 0;
-}
-
-.review-secondary-attr {
-  display: block;
-  float: right;
-  width: 57%;
-  padding: 15px 15px 15px 0;
-}
-
-//----------------------------------------------------------------------
 .restaurant-bottom-reviews {
   display: block;
   float: left;

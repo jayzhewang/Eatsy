@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
 
     if(this.props.formType === 'login') {
       return (
-        <div>New to Eatsy? <Link to='/signup'>Sign Up</Link> Instead</div>
+        <div>New to Eatsy? <Link to='/signup' className='login-form-sign-up'>Sign Up</Link> Instead</div>
       );
     } else {
       return (
@@ -52,48 +52,6 @@ class SessionForm extends React.Component {
     } else {
       return (
         <div className='login-form-message-switch'>Sign Up | Eatsy</div>
-      );
-    }
-  }
-
-  emailAndAgeLabel(){
-
-    if(this.props.formType !== 'login'){
-
-      return (
-        <div>
-          <label className='input-field'>
-              <input type='text'
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className='login-input' />
-          </label>
-
-          <label className='input-field'>
-              <input type='text'
-                placeholder='Age'
-                value={this.state.age}
-                onChange={this.update('age')}
-                className='login-input' />
-          </label>
-
-          <label className='input-field'>
-              <input type='text'
-                placeholder='Gender'
-                value={this.state.gender}
-                onChange={this.update('gender')}
-                className='login-input' />
-          </label>
-
-          <label className='input-field'>
-              <input type='text'
-                placeholder='Location'
-                value={this.state.location}
-                onChange={this.update('location')}
-                className='login-input' />
-          </label>
-        </div>
       );
     }
   }
@@ -140,56 +98,139 @@ class SessionForm extends React.Component {
   render(){
       return (
           <div className='login-form-container group'>
-              <form onSubmit={this.handleSubmit} className='login-form-box cf'>
-                  <div className='login-form-message'>
-                    {this.renderErrors()}
-                  </div>
+            <div className='login-form-message'>
+              {this.renderErrors()}
+            </div>
 
-                  <div className='login-form-fill-info'>
-                    <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
-                    <div className='login-form-text'>
-                      <h3>
-                        { this.navLink() }
-                      </h3>
-
-                      <label className='input-field'>
-                        <input type='text'
-                          placeholder='Username'
-                          value={this.state.username}
-                          onChange={this.update('username')}
-                          className='login-input' />
-                      </label>
-
-                      <label className='input-field'>
-                        <input type='password'
-                          placeholder="Password"
-                          value={this.state.password}
-                          onChange={this.update('password')}
-                          className='login-input' />
-                      </label>
-
-                      {this.emailAndAgeLabel()}
-
-                      <div className='input-field-submit'>
-                        <input type='submit' value='Submit' className='login-submit-button'/>
-                        <br/>
-                        <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
-                      </div>
-                    </div>
-
-                  </div>
-              </form>
-
-              <div className='login-form-image'>
-
-                  <img src='http://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
-                    alt='login-img'
-                    height='450'
-                    width='450' />
-
-              </div>
+            <div className='login-form-container-bottom group'>
+              {this.loginOrSignup()}
           </div>
+        </div>
       );
+  }
+
+  _newUser() {
+    return (
+      <div>
+        <label className='input-field'>
+          <input type='text'
+            placeholder='Username'
+            value={this.state.username}
+            onChange={this.update('username')}
+            className='login-input' />
+        </label>
+        <label className='input-field'>
+          <input type='password'
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            className='login-input' />
+        </label>
+      </div>
+    );
+  }
+
+  _returnUser(){
+    return (
+      <div>
+        <label className='input-field'>
+            <input type='text'
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className='login-input' />
+        </label>
+
+        <label className='input-field'>
+            <input type='text'
+              placeholder='Age'
+              value={this.state.age}
+              onChange={this.update('age')}
+              className='login-input' />
+        </label>
+
+        <label className='input-field'>
+            <input type='text'
+              placeholder='Gender'
+              value={this.state.gender}
+              onChange={this.update('gender')}
+              className='login-input' />
+        </label>
+
+        <label className='input-field'>
+            <input type='text'
+              placeholder='Location'
+              value={this.state.location}
+              onChange={this.update('location')}
+              className='login-input' />
+        </label>
+      </div>
+    );
+  }
+
+  loginOrSignup() {
+    if (this.props.formType === 'login'){
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit} className='login-form-return-user group'>
+              <div className='login-form-fill-info group'>
+                <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
+                <div className='login-form-text'>
+                  <h3>
+                    { this.navLink() }
+                  </h3>
+
+                  {this._newUser()}
+
+                  <div className='input-field-submit'>
+                    <input type='submit' value='Submit' className='login-submit-button'/>
+                    <br/>
+                    <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
+                  </div>
+                </div>
+              </div>
+          </form>
+
+          <div className='login-form-image group'>
+              <img src='http://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
+                alt='login-img'
+                height='450'
+                width='450'
+          />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className='login-form-new-user'>
+          <form onSubmit={this.handleSubmit} className='login-form-new-user group'>
+              <div className='login-form-fill-info group'>
+                <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
+                <div className='login-form-text'>
+                  <h3>
+                    { this.navLink() }
+                  </h3>
+
+                  {this._newUser()}
+                  {this._returnUser()}
+
+                  <div className='input-field-submit'>
+                    <input type='submit' value='Submit' className='login-submit-button'/>
+                  </div>
+                </div>
+              </div>
+          </form>
+
+          <div className='login-form-image group'>
+              <img src='http://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
+                alt='login-img'
+                height='450'
+                width='450'
+          />
+          </div>
+        </div>
+      );
+    }
   }
 }
 

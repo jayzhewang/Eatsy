@@ -104,6 +104,7 @@ form, label, input, textarea, button {
   margin: 10px 10px 10px 10px;
   text-align: center;
   padding-top: 9px 9px 15px 9px;
+  border-radius: 3px;
 }
 
 .greeting-text {
@@ -118,6 +119,10 @@ form, label, input, textarea, button {
   height: 49px;
 }
 
+.greeting-user-photo > img {
+  border-radius: 50%;
+}
+
 .greeting-buttons-log-out {
   color: white;
   background-color: #ccc;
@@ -130,6 +135,7 @@ form, label, input, textarea, button {
   text-align: center;
   padding-top: 9px 9px 15px 9px;
   float: right;
+  border-radius: 3px;
 }
 
 .greeting-innertext {
