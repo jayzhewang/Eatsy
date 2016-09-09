@@ -23,9 +23,10 @@
 .restaurant-top {
   display: block;
   // border: 1px solid black;
-  width: 70%;
+  width: 62%;
   margin: auto;
   padding: 24px 0 5px 0;
+  min-width: 1200px;
 }
 
 .restaurant-top-left-side {
@@ -67,8 +68,9 @@
   display: block;
   // border: 1px solid black;
   width: 71%;
-  min-width: 907px;
+  min-width: 1060px;
   margin: auto;
+  padding-left: 160px
 }
 
 .restaurant-middle-map {
@@ -129,11 +131,12 @@
 
 .restaurant-bottom-sidebar {
   display: block;
-  float: right;
+  float: left;
   // border: 1px solid red;
-  width: 30%;
+  width: 20%;
   height: 100%;
   // border: 1px solid red;
+  padding-left: 60px;
 }
 
 .restaurant-bottom-reviews {
@@ -141,11 +144,12 @@
   float: left;
   // border-bottom: 1px solid #ccc;
   width: 66.666%;
+  padding-left: 50px;
 }
 
 .restaurant-reviews-form-border {
   border-right: 1px solid #cccccc;
-  padding: 0 35px 0 0;
+  padding: 0 50px 0 50px;
   min-width: 675px;
 }
 

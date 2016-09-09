@@ -71,10 +71,11 @@ form, label, input, textarea, button {
 
 .navbar {
   display: block;
-  width: 71%;
+  width: 62%;
   margin: auto;
   padding: 15px;
   background: #0F172B;
+  min-width: 1200px;
 }
 
 .header-brand {
