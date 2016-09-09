@@ -52,6 +52,7 @@ class Restaurant extends React.Component {
                 </div>
                 <div className="price-range">{restaurant.price_range}</div>
               </div>
+              
               <div className="restaurant-top-right-side">
                 <div className='restaurant-top-right-side-review'>
                   <button type="button" onClick={this._showForm}>Write a Review</button>
@@ -71,9 +72,11 @@ class Restaurant extends React.Component {
                 <div className='primary'>
                   <img src={`${primary}`} alt='front picture' height="235" width="235"/>
                 </div>
+
                 <div className='secondary'>
                   <img src={`${secondary}`} alt='front picture' height="275" width="275"/>
                 </div>
+
                 <div className='tertiary'>
                   <img src={`${tertiary}`} alt='front picture' height="235" width="235"/>
                 </div>
@@ -83,7 +86,6 @@ class Restaurant extends React.Component {
           </div>
 
           <div className="restaurant-content">
-
             <content className="restaurant-bottom group">
               <div className="restaurant-bottom-reviews">
                 <ReviewsContainer restaurant={restaurant} showForm={this.showForm} />
@@ -97,7 +99,6 @@ class Restaurant extends React.Component {
 
                 <div className='restaurant-bottom-sidebar-info'>
                   <h1>More Restaurant Info</h1>
-
                   <div className='sidebar-info group'><div className='sidebar-info-left'>Delivery</div> <div className='sidebar-info-right'>{yesNo[restaurant._delivery]}</div></div>
                   <div className='sidebar-info group'><div className='sidebar-info-left'>Take-out</div> <div className='sidebar-info-right'>{yesNo[restaurant._take_out]}</div></div>
                   <div className='sidebar-info group'><div className='sidebar-info-left'>Accepts Credit Cards</div> <div className='sidebar-info-right'>{yesNo[restaurant._accepts_credit_card]}</div></div>
@@ -116,7 +117,6 @@ class Restaurant extends React.Component {
                 </div>
               </div>
             </content>
-
           </div>
         </div>
       );

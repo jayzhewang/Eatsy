@@ -12,12 +12,8 @@ class Restaurant extends React.Component {
       return <div>Loading...</div>;
     } else {
       const user = this.props.user;
-      // const photos = restaurant.photos.split(" ");
-      // const primary = photos[0];
-      // const star = <span className={`rating-static ${STARS[restaurant.rating]}`}></span>;
       return (
         <div className="user-content">
-
           <header className="user-info">
             <div className="user-info-left-side">
               <img src={`${user.picture}`} alt="profile picture" height='100' width='100'/>
@@ -44,7 +40,6 @@ class Restaurant extends React.Component {
           <content className='user-reviews'>
             <ReviewsContainer user={user} />
           </content>
-
         </div>
       );
     }

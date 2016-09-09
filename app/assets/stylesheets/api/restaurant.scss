@@ -5,7 +5,6 @@
 .restaurant-content{
   width: 74%;
   margin: auto;
-  // border: 1px solid red;
 }
 
 //----------------------------------------------------------------------
@@ -67,7 +66,6 @@
 //----------------------------------------------------------------------
 .restaurant-middle {
   display: block;
-  // border: 1px solid black;
   width: 71%;
   min-width: 1060px;
   margin: auto;
@@ -97,7 +95,6 @@
 .restaurant-middle-pictures {
   display: block;
   float: left;
-  // border: 1px solid red;
 }
 
 .restaurant-middle-pictures > div {
@@ -125,7 +122,6 @@
 //----------------------------------------------------------------------
 .restaurant-bottom {
   display: block;
-  // border: 1px solid black;
   padding: 20px;
   min-width: 1045px;
   margin: auto;
@@ -134,17 +130,14 @@
 .restaurant-bottom-sidebar {
   display: block;
   float: left;
-  // border: 1px solid red;
   width: 20%;
   height: 100%;
-  // border: 1px solid red;
   padding-left: 60px;
 }
 
 .restaurant-bottom-reviews {
   display: block;
   float: left;
-  // border-bottom: 1px solid #ccc;
   width: 66.666%;
   padding-left: 50px;
 }
