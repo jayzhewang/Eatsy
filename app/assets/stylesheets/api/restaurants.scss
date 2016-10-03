@@ -18,6 +18,7 @@
   width: 1000px;
   margin: auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .home-restaurants-discovery {
@@ -38,7 +39,7 @@
 .home-restaurants-index-items-container {
   display: flex;
   border-right: 1px solid #ccc;
-  padding-right: 30px;
+  padding-right: 65px;
 }
 
 .home-restaurants-index-items {
@@ -46,7 +47,7 @@
 
 .home-restaurants-index-photos {
   height: 500px;
-  width: 462px;
+  width: 380px;
   padding-left: 30px;
 }
 

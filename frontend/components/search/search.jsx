@@ -24,7 +24,7 @@ class Search extends React.Component {
   render(){
     return(
       <div>
-        <form className='search-field group'>
+        <form className='search-field'>
           <input type='text'
             value={this.state.category}
             onChange={this.update('category')}

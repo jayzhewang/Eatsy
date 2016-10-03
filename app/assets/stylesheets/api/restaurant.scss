@@ -26,6 +26,7 @@
   display: flex;
   justify-content: space-between;
   margin: auto;
+  width: 1015px;
   padding: 24px 0 5px 0;
 }
 
@@ -64,7 +65,8 @@
 //----------------------------------------------------------------------
 .restaurant-middle {
   display: flex;
-  justify-content: center;
+  width: 1015px;
+  margin: auto;
 }
 
 .restaurant-middle-map {
@@ -115,7 +117,9 @@
 .restaurant-bottom {
   display: flex;
   justify-content: space-between;
+  width: 1015px;
   margin: auto;
+  padding-top: 40px;
 }
 
 .restaurant-bottom-reviews {
@@ -124,11 +128,14 @@
 
 .restaurant-bottom-sidebar {
   display: block;
+  min-width: 205px;
   padding-left: 60px;
 }
 
 .restaurant-reviews-form-border {
   border-right: 1px solid #cccccc;
+  padding: 10px 60px 0 0;
+  display: block;
 }
 
 .restaurant-reviews-form-border > h1 {
@@ -193,7 +200,8 @@
 }
 
 .sidebar-info {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 3px;
 }
 

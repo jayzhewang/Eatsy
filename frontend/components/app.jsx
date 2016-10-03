@@ -10,8 +10,10 @@ const App = ({children}) => {
       <nav className="headerbar">
         <div className="navbar">
           <Link to="/" className="header-brand">Eatsy</Link>
-          <SearchContainer />
-          <GreetingContainer />
+          <div className='header-right-side'>
+            <SearchContainer />
+            <GreetingContainer />
+          </div>
         </div>
       </nav>
       {children}

@@ -1,13 +1,12 @@
 .search-field {
-  display: block;
-  float: left;
-  margin: 4px 0 0 200px;
+  display: flex;
+  justify-content: center;
+  margin: 5px 50px 0 0;
 }
 
 .search-field > input {
-  float: left;
   display: block;
-  height: 40px;
+  height: 30px;
   width: 355px;
   background: #fff;
   border-radius: 5px;
@@ -16,7 +15,6 @@
 }
 
 .search-field > button {
-  float: left;
   display: block;
   width: 90px;
   height: 30px;

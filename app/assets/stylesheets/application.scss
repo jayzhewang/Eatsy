@@ -72,6 +72,7 @@ form, label, input, textarea, button {
 
 .navbar {
   display: flex;
+  justify-content: space-between;
   width: 1000px;
   margin: auto;
   padding: 15px 0;
@@ -81,15 +82,14 @@ form, label, input, textarea, button {
 .header-brand {
   color: #fff;
   font-size: 36px;
-  float: left;
 }
 
-.navbar > GreetingContainer {
-  float: left;
+.header-right-side {
+  display: flex;
+  justify-content: space-between;
 }
 
 .greeting-login-signup {
-  float: right;
   display: block;
   width: 200px;
 }
@@ -109,13 +109,12 @@ form, label, input, textarea, button {
 }
 
 .greeting-text {
-  display: block;
-  float: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .greeting-user-photo {
   display: block;
-  float: left;
   width: 49px;
   height: 49px;
 }
@@ -135,7 +134,6 @@ form, label, input, textarea, button {
   margin: 10px 10px 10px 10px;
   text-align: center;
   padding-top: 9px 9px 15px 9px;
-  float: right;
   border-radius: 3px;
 }
 
