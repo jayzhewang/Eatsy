@@ -53,8 +53,8 @@ form, label, input, textarea, button {
 }
 
 .map {
-  height: 225px;
-  width: 290px;
+  height: 212px;
+  width: 277px;
   border: 1px solid #cccccc;
 }
 
@@ -71,12 +71,11 @@ form, label, input, textarea, button {
 }
 
 .navbar {
-  display: block;
-  width: 62%;
+  display: flex;
+  width: 1000px;
   margin: auto;
-  padding: 15px;
+  padding: 15px 0;
   background: #0F172B;
-  min-width: 1200px;
 }
 
 .header-brand {

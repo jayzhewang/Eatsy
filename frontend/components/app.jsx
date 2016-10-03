@@ -7,8 +7,8 @@ import SearchContainer from './search/search_container';
 const App = ({children}) => {
   return (
     <div>
-      <nav className="headerbar group">
-        <div className="navbar group">
+      <nav className="headerbar">
+        <div className="navbar">
           <Link to="/" className="header-brand">Eatsy</Link>
           <SearchContainer />
           <GreetingContainer />

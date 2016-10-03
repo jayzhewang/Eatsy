@@ -38,55 +38,56 @@ class Restaurant extends React.Component {
       return (
         <div className='restaurant'>
           <div className='restaurant-top-background'>
-            <header className="restaurant-top group">
-              <div className="restaurant-top-left-side">
-                <h1>{restaurant.name}</h1>
-                <div className='restaurant-topleft'>
-                  <StarRatingComponent name='starRateStatic'
-                                       starCount={5}
-                                       value={rating}
-                                       starColor={'#e5050b'}
-                                       editing={false}
-                                       renderStarIcon={()=><span className='star-symbol'>✪</span>}
-                  />
-                </div>
-                <div className="price-range">{restaurant.price_range}</div>
-              </div>
-              
-              <div className="restaurant-top-right-side">
-                <div className='restaurant-top-right-side-review'>
-                  <button type="button" onClick={this._showForm}>Write a Review</button>
-                </div>
-              </div>
-            </header>
-
-            <header className="restaurant-middle group">
-              <div className="restaurant-middle-map">
-                {restaurant.get_lng_lat ? <Map position={restaurant.get_lng_lat} /> : <div>Map Loading...</div> }
-
-                <h3>{restaurant.location}</h3>
-                <div>{restaurant.neighborhood}</div>
-                <div>{restaurant.phone_number}</div>
-              </div>
-              <div className='restaurant-middle-pictures group'>
-                <div className='primary'>
-                  <img src={`${primary}`} alt='front picture' height="235" width="235"/>
+            <div className='restaurant-top-background-container'>
+              <header className="restaurant-top">
+                <div className="restaurant-top-left-side">
+                  <h1>{restaurant.name}</h1>
+                  <div className='restaurant-topleft'>
+                    <StarRatingComponent name='starRateStatic'
+                                         starCount={5}
+                                         value={rating}
+                                         starColor={'#e5050b'}
+                                         editing={false}
+                                         renderStarIcon={()=><span className='star-symbol'>✪</span>}
+                    />
+                  </div>
+                  <div className="price-range">{restaurant.price_range}</div>
                 </div>
 
-                <div className='secondary'>
-                  <img src={`${secondary}`} alt='front picture' height="275" width="275"/>
+                <div className="restaurant-top-right-side">
+                  <div className='restaurant-top-right-side-review'>
+                    <button type="button" onClick={this._showForm}>Write a Review</button>
+                  </div>
                 </div>
+              </header>
 
-                <div className='tertiary'>
-                  <img src={`${tertiary}`} alt='front picture' height="235" width="235"/>
+              <header className="restaurant-middle">
+                <div className="restaurant-middle-map">
+                  {restaurant.get_lng_lat ? <Map position={restaurant.get_lng_lat} /> : <div>Map Loading...</div> }
+
+                  <h3>{restaurant.location}</h3>
+                  <div>{restaurant.neighborhood}</div>
+                  <div>{restaurant.phone_number}</div>
                 </div>
-              </div>
-            </header>
+                <div className='restaurant-middle-pictures'>
+                  <div className='primary'>
+                    <img src={`${primary}`} alt='front picture' height="223" width="223"/>
+                  </div>
 
+                  <div className='secondary'>
+                    <img src={`${secondary}`} alt='front picture' height="262" width="262"/>
+                  </div>
+
+                  <div className='tertiary'>
+                    <img src={`${tertiary}`} alt='front picture' height="223" width="223"/>
+                  </div>
+                </div>
+              </header>
+            </div>
           </div>
 
           <div className="restaurant-content">
-            <content className="restaurant-bottom group">
+            <content className="restaurant-bottom">
               <div className="restaurant-bottom-reviews">
                 <ReviewsContainer restaurant={restaurant} showForm={this.showForm} />
               </div>
