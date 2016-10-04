@@ -11,19 +11,23 @@ class Reviews extends React.Component {
       showForm: this.props.showForm,
       reviews: this.props.parent.reviews
     };
+
     this.reverseCount = 0;
     this.handleCreateReview = this.handleCreateReview.bind(this);
     this._formSwitch = this._formSwitch.bind(this);
   }
 
   componentDidUpdate(){
-    window.console.log(this.state.reviews);
-    window.console.log(this.props.parent.reviews);
     if(this.props.parent.reviews !== undefined){
       if(this.state.reviews === undefined ||
          this.props.parent.reviews.length > this.state.reviews.length){
            this.setState({reviews: this.props.parent.reviews});
       }
+    }
+
+    if(this.props.showForm &&
+       !this.state.showForm){
+      this.setState({showForm: true});
     }
   }
 
@@ -81,14 +85,8 @@ class Reviews extends React.Component {
 
         </form>
       );
-
-    } else if (this.props.currentUser && !this.state.showForm){
-      return (
-        <div onClick={this._formSwitch}
-             className='restaurant-reviews-create'>
-          <span>Create A Review!</span>
-        </div>
-      );
+    } else if(this.props.currentUser && !this.state.showForm){
+      return "";
     } else {
       return (
         <div>

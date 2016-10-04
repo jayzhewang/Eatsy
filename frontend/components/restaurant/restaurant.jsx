@@ -6,8 +6,16 @@ import StarRatingComponent from 'react-star-rating-component';
 class Restaurant extends React.Component {
   constructor(props){
     super(props);
+    this.state ={
+      showForm: false
 
-    this.showForm = false;
+    };
+
+    this._formSwitch = this._formSwitch.bind(this);
+  }
+
+  coomponentDidUpdate(){
+    window.console.log(this);
   }
 
   componentDidMount(){
@@ -16,6 +24,21 @@ class Restaurant extends React.Component {
 
   _showForm(){
     this.showForm = true;
+  }
+
+  _formSwitch(){
+    this.setState({showForm: true});
+  }
+
+  _showReviewButton(){
+    if(this.props.currentUser){
+      return (
+        <div onClick={this._formSwitch}
+             className='restaurant-reviews-create'>
+          <span>Write A Review</span>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -61,10 +84,7 @@ class Restaurant extends React.Component {
 
                 <div className="restaurant-top-right-side">
                   <div className='restaurant-top-right-side-review'>
-                    <button type="button"
-                            onClick={this._showForm}>
-                            Write a Review
-                    </button>
+                    {this._showReviewButton()}
                   </div>
                 </div>
               </header>
@@ -110,7 +130,7 @@ class Restaurant extends React.Component {
             <content className="restaurant-bottom">
               <div className="restaurant-bottom-reviews">
                 <ReviewsContainer restaurant={restaurant}
-                                  showForm={this.showForm} />
+                                  showForm={this.state.showForm} />
               </div>
 
               <div className="restaurant-bottom-sidebar">

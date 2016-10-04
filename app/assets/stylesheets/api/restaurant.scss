@@ -40,27 +40,6 @@
 .restaurant-top-right-side {
 }
 
-.restaurant-top-right-side-review {
-    width: 135px;
-    height: 35px;
-    border: 1px solid #cccccc;
-    background: #e5050b;
-    border-radius: 5px;
-    padding: 5px 0 5px 15px;
-    margin-bottom: 10px;
-    visibility: hidden;
-}
-
-.restaurant-top-right-side-review:hover, .restaurant-top-right-side-review > button:hover {
-  cursor: pointer;
-}
-
-.restaurant-top-right-side-review > button {
-  color: #fff;
-  padding-left: 12px;
-  padding: 10px 0 0 5px;
-}
-
 //----------------------------------------------------------------------
 .restaurant-middle {
   display: flex;
@@ -160,7 +139,7 @@
   text-align: center;
   width: 135px;
   height: 35px;
-  border: 1px solid #cccccc;
+  border: 1px solid #acacac;
   background: #e5050b;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -177,7 +156,7 @@
   justify-content: center;
   width: 135px;
   height: 35px;
-  border: 1px solid #cccccc;
+  border: 1px solid #acacac;
   background: #e5050b;
   border-radius: 5px;
   margin-bottom: 10px;

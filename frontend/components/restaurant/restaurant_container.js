@@ -6,8 +6,12 @@ import Restaurant from './restaurant';
 const mapStateToProps = (state, ownProps) => {
   const id = parseInt(ownProps.params.id);
   const restaurant = state.restaurants.find(res=> res.id === id );
-  
-  return { restaurant };
+  const currentUser = state.session.currentUser;
+
+  return {
+          restaurant: restaurant,
+          currentUser: currentUser
+         };
 };
 
 

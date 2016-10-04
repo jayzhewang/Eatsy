@@ -11,11 +11,13 @@ class Footer extends React.Component {
             <p>Eatsy demonstrates skills I've learned on Ruby on Rails and React/Redux</p>
           </div>
           <div className='footer-image-github'>
-            <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1473368331/github-transparent_shmjeq.png'
-              alt='github png'
-              height='35'
-              width='35'
-              />
+            <a href='https://github.com/jz-wang?tab=repositories'>
+              <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1473368331/github-transparent_shmjeq.png'
+                alt='github png'
+                height='35'
+                width='35'
+                />
+            </a>
           </div>
           <div className='footer-about-fineprint'>
             <p>Eatsy is inspired by Yelp. All photos used here belong to their respected owners.</p>
