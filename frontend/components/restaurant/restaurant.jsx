@@ -31,8 +31,11 @@ class Restaurant extends React.Component {
       const yesNo = { true: "Yes", false: "No"};
       const hours = restaurant.hours;
       const hoursArray = [];
-      hours.split('--').forEach(hour=>{
-        hoursArray.push(<li className="restaurant-hour-list">{hour}</li>);
+      hours.split('--').forEach((hour, i)=>{
+        hoursArray.push(<li className="restaurant-hour-list"
+                            key={`hourlist${i}`}>
+                            {hour}
+                        </li>);
       });
 
       return (
@@ -48,38 +51,55 @@ class Restaurant extends React.Component {
                                          value={rating}
                                          starColor={'#e5050b'}
                                          editing={false}
-                                         renderStarIcon={()=><span className='star-symbol'>✪</span>}
-                    />
+                                         renderStarIcon={()=>
+                                           <span className='star-symbol'>
+                                             ✪
+                                           </span>} />
                   </div>
                   <div className="price-range">{restaurant.price_range}</div>
                 </div>
 
                 <div className="restaurant-top-right-side">
                   <div className='restaurant-top-right-side-review'>
-                    <button type="button" onClick={this._showForm}>Write a Review</button>
+                    <button type="button"
+                            onClick={this._showForm}>
+                            Write a Review
+                    </button>
                   </div>
                 </div>
               </header>
 
               <header className="restaurant-middle">
                 <div className="restaurant-middle-map">
-                  {restaurant.get_lng_lat ? <Map position={restaurant.get_lng_lat} /> : <div>Map Loading...</div> }
-
+                  {
+                    restaurant.get_lng_lat ?
+                    <Map position={restaurant.get_lng_lat} /> :
+                    <div>Map Loading...</div>
+                  }
                   <h3>{restaurant.location}</h3>
                   <div>{restaurant.neighborhood}</div>
                   <div>{restaurant.phone_number}</div>
                 </div>
                 <div className='restaurant-middle-pictures'>
                   <div className='primary'>
-                    <img src={`${primary}`} alt='front picture' height="223" width="223"/>
+                    <img src={`${primary}`}
+                         alt='front picture'
+                         height="223"
+                         width="223"/>
                   </div>
 
                   <div className='secondary'>
-                    <img src={`${secondary}`} alt='front picture' height="262" width="262"/>
+                    <img src={`${secondary}`}
+                         alt='front picture'
+                         height="262"
+                         width="262"/>
                   </div>
 
                   <div className='tertiary'>
-                    <img src={`${tertiary}`} alt='front picture' height="223" width="223"/>
+                    <img src={`${tertiary}`}
+                         alt='front picture'
+                         height="223"
+                         width="223"/>
                   </div>
                 </div>
               </header>
@@ -89,7 +109,8 @@ class Restaurant extends React.Component {
           <div className="restaurant-content">
             <content className="restaurant-bottom">
               <div className="restaurant-bottom-reviews">
-                <ReviewsContainer restaurant={restaurant} showForm={this.showForm} />
+                <ReviewsContainer restaurant={restaurant}
+                                  showForm={this.showForm} />
               </div>
 
               <div className="restaurant-bottom-sidebar">

@@ -7,20 +7,32 @@ class Reviews extends React.Component {
     super(props);
     this.state = {
       body: "",
-      rating: 5,
+      rating: 4,
+      showForm: this.props.showForm,
+      reviews: this.props.parent.reviews
     };
-    this.handleCreateReview = this.handleCreateReview.bind(this);
     this.reverseCount = 0;
-    this.showForm = this.props.showForm;
+    this.handleCreateReview = this.handleCreateReview.bind(this);
+    this._formSwitch = this._formSwitch.bind(this);
+  }
+
+  componentDidUpdate(){
+    window.console.log(this.props.parent.reviews);
+    if(this.props.parent.reviews !== undefined &&
+       this.props.parent.reviews.length > this.state.reviews.length){
+         this.setState({reviews: this.props.parent.reviews});
+    }
   }
 
   handleCreateReview(e){
     e.preventDefault();
-    const review = Object.assign({}, this.state);
+    const review = {body: this.state.body, rating: this.state.rating};
     review['user_id'] = this.props.currentUser.id;
     review['restaurant_id'] = this.props.parent.id;
     this.props.createReview(review);
-    this.setState({body: "", rating: 5});
+    this.setState({body: "",
+                   rating: 4,
+                   showForm: false});
   }
 
   update(field){
@@ -31,8 +43,8 @@ class Reviews extends React.Component {
     this.setState({rating: nextValue});
   }
 
-  _formSwitch(){
-    if(this.props.currentUser){
+  _form(){
+    if(this.props.currentUser && this.state.showForm){
       return (
         <form className='restaurant-reviews-form' action="#">
           <div className="restaurant-reviews-form-input">
@@ -42,24 +54,36 @@ class Reviews extends React.Component {
                                    value={this.state.rating}
                                    onStarClick={this.onStarClick.bind(this)}
                                    starColor={'#e5050b'}
-                                   renderStarIcon={()=><span className='star-symbol'>✪</span>}
+                                   renderStarIcon={()=><span
+                                   className='star-symbol'>✪</span>}
               />
             </div>
 
             <div className="input">
               <textarea className="restaurant-reviews-form-textarea"
-                        placeholder="Your review will help others learn about great local restaurants."
+                        placeholder="Your review will help others
+                                    learn about great local restaurants."
                         value={this.state.body}
                         onChange={this.update('body')}></textarea>
             </div>
           </div>
 
-          <div className="restaurant-reviews-submit group">
+          <div className="restaurant-reviews-submit">
             <span className='star-symbol'>✪</span>
-            <button type="submit" onClick={this.handleCreateReview}> <span className='post'>Post Review</span></button>
+            <button type="submit"
+                    onClick={this.handleCreateReview}>
+                    <span className='post'>Post Review</span>
+            </button>
           </div>
 
         </form>
+      );
+
+    } else if (this.props.currentUser && !this.state.showForm){
+      return (
+        <div onClick={this._formSwitch}>
+          Create A Review!
+        </div>
       );
     } else {
       return (
@@ -71,16 +95,33 @@ class Reviews extends React.Component {
     }
   }
 
+  _formSwitch(){
+    this.setState({showForm: true});
+  }
+
+  padDate(d) {
+    return (d < 10) ? '0' + d : d;
+  }
+
   _dateRender(date){
     let dateString = "";
-    date.slice(0, 10).split('-').forEach(d=>{
-      dateString += d + "/";
-    });
-    return dateString.slice(0, dateString.length - 1);
+    if(date === undefined){
+      let d = new Date();
+      return [
+                d.getFullYear(),
+                this.padDate(d.getMonth()+1),
+                this.padDate(d.getDate())
+              ].join('/');
+    } else {
+      date.slice(0, 10).split('-').forEach(d=>{
+        dateString += d + "/";
+      });
+      return dateString.slice(0, dateString.length - 1);
+    }
   }
 
   render() {
-    let reviews = this.props.parent.reviews;
+    let reviews = this.state.reviews;
     if(this.reverseCount === 0 && reviews !== undefined){
       reviews = reviews.reverse();
     }
@@ -96,7 +137,7 @@ class Reviews extends React.Component {
         return (
           <div>
             <div className='restaurant-reviews-form-border'>
-              {this._formSwitch()}
+              {this._form()}
             <h1>Recommanded Reviews</h1>
             {
               reviews.map(review => {
@@ -116,7 +157,10 @@ class Reviews extends React.Component {
                   <div className='review group' key={review.id}>
                     <div className='review-primary-attr group'>
                       <div className='review-primary-attr-left'>
-                        <img src={`${userPhoto}`} alt='user picture' height="75" width="75"/>
+                        <img src={`${userPhoto}`}
+                             alt='user picture'
+                             height="75"
+                             width="75"/>
                       </div>
                       <div className='review-primary-attr-right'>
                         <h3>
@@ -135,11 +179,17 @@ class Reviews extends React.Component {
                                              value={review.rating}
                                              starColor={'#e5050b'}
                                              editing={false}
-                                             renderStarIcon={()=><span className='star-symbol'>✪</span>}
-                          />
+                                             renderStarIcon={()=>
+                                               <span className='star-symbol'>
+                                                 ✪
+                                               </span>} />
                       </div>
-                      <div className='review-date'>{this._dateRender(review.updated_at)}</div>
-                      <div className='review-body'>{review.body}</div>
+                      <div className='review-date'>
+                        {this._dateRender(review.updated_at)}
+                      </div>
+                      <div className='review-body'>
+                        {review.body}
+                      </div>
                     </div>
                   </div>
                 );
