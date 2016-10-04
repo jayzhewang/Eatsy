@@ -48,7 +48,7 @@ class Reviews extends React.Component {
 
             <div className="input">
               <textarea className="restaurant-reviews-form-textarea"
-                        placeholder="Your reivew will help others learn about greate local restaurants."
+                        placeholder="Your review will help others learn about great local restaurants."
                         value={this.state.body}
                         onChange={this.update('body')}></textarea>
             </div>
