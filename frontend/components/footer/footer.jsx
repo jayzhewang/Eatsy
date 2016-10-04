@@ -11,7 +11,7 @@ class Footer extends React.Component {
             <p>Eatsy demonstrates skills I've learned on Ruby on Rails and React/Redux</p>
           </div>
           <div className='footer-image-github'>
-            <a href='https://github.com/jz-wang?tab=repositories'>
+            <a href='https://github.com/jz-wang/Eatsy'>
               <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1473368331/github-transparent_shmjeq.png'
                 alt='github png'
                 height='35'
