@@ -8,6 +8,7 @@ class Search extends React.Component {
       location: ""
     };
 
+    this.changed = false;
     this.handleSearch = this.handleSearch.bind(this);
     this.restaurants = this.props.restaurants;
   }
@@ -15,10 +16,21 @@ class Search extends React.Component {
   handleSearch(e){
     e.preventDefault();
     this.props.queryRestaurants(this.state.category);
+    this.changed = true;
+  }
+
+  _clearSearch(){
+    this.props.queryRestaurants(this.state.category);
   }
 
   update(field){
-    return e => { this.setState({[field]: e.currentTarget.value }); };
+    if(this.changed &&
+       this.state.category === ""){
+      this._clearSearch();
+      this.changed = false;
+    } else {
+      return e => { this.setState({[field]: e.currentTarget.value }); };
+    }
   }
 
   render(){

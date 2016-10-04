@@ -7,7 +7,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return { queryRestaurants: (query) => dispatch(queryRestaurants(query)) };
+  return { queryRestaurants: query => dispatch(queryRestaurants(query)) };
 };
 
 export default connect(
