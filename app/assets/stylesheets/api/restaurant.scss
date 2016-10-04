@@ -155,24 +155,43 @@
   margin: 10px 0 20px 0;
 }
 
-.restaurant-reviews-submit {
+.restaurant-reviews-create {
+  display: block;
+  text-align: center;
   width: 135px;
   height: 35px;
   border: 1px solid #cccccc;
   background: #e5050b;
   border-radius: 5px;
-  padding: 5px 0 5px 15px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.restaurant-reviews-create > span{
+  display: block;
+  margin-top: 8px;
+}
+
+.restaurant-reviews-submit {
+  display: flex;
+  justify-content: center;
+  width: 135px;
+  height: 35px;
+  border: 1px solid #cccccc;
+  background: #e5050b;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.restaurant-reviews-submit:hover, .restaurant-reviews-submit > button:hover {
+.restaurant-reviews-submit:hover,
+.restaurant-reviews-submit > button:hover,
+.restaurant-reviews-create:hover {
   cursor: pointer;
 }
 
 .restaurant-reviews-submit > button {
   color: #fff;
-  padding-left: 10px;
-  padding: 10px 0 0 5px;
+  margin-left: 5px;
 }
 
 .restaurant-reviews-submit > span {

@@ -19,6 +19,7 @@ class Reviews extends React.Component {
   componentDidUpdate(){
     window.console.log(this.props.parent.reviews);
     if(this.props.parent.reviews !== undefined &&
+       this.state.reviews !== undefined &&
        this.props.parent.reviews.length > this.state.reviews.length){
          this.setState({reviews: this.props.parent.reviews});
     }
@@ -81,8 +82,9 @@ class Reviews extends React.Component {
 
     } else if (this.props.currentUser && !this.state.showForm){
       return (
-        <div onClick={this._formSwitch}>
-          Create A Review!
+        <div onClick={this._formSwitch}
+             className='restaurant-reviews-create'>
+          <span>Create A Review!</span>
         </div>
       );
     } else {
