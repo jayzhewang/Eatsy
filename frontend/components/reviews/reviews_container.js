@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {createReview: (review) => dispatch(createReview(review))};
+  return {createReview: review => dispatch(createReview(review))};
 };
 
 export default connect(

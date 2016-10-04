@@ -143,6 +143,12 @@ form, label, input, textarea, button {
   padding-top: 5px;
 }
 
+.greeting-buttons-log-out:hover,
+.greeting-user-photo > img:hover,
+.search-field > button:hover {
+  cursor: pointer;
+}
+
 //-------------------------------FOOTER---------------------------------
 .footer {
   background-color: #f5f5f5;

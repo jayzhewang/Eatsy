@@ -17,11 +17,13 @@ class Reviews extends React.Component {
   }
 
   componentDidUpdate(){
+    window.console.log(this.state.reviews);
     window.console.log(this.props.parent.reviews);
-    if(this.props.parent.reviews !== undefined &&
-       this.state.reviews !== undefined &&
-       this.props.parent.reviews.length > this.state.reviews.length){
-         this.setState({reviews: this.props.parent.reviews});
+    if(this.props.parent.reviews !== undefined){
+      if(this.state.reviews === undefined ||
+         this.props.parent.reviews.length > this.state.reviews.length){
+           this.setState({reviews: this.props.parent.reviews});
+      }
     }
   }
 
