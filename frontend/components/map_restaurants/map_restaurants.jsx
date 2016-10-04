@@ -1,10 +1,10 @@
 import React from 'react';
+import StarRatingComponent from 'react-star-rating-component';
 
 class Map extends React.Component {
   componentDidUpdate(){
     const mapDOMNode = this.refs.map;
     const mapOptions = {
-      mapTypeId: 'roadmap',
       zoomControl: true,
       mapTypeControl: false,
       scaleControl: false,
@@ -17,16 +17,16 @@ class Map extends React.Component {
 
     var markers = [], infoWindowContent = [];
     restaurants.forEach(res=>{
-
-        markers.push([res.name, res.get_lng_lat[0], res.get_lng_lat[1]]);
-        infoWindowContent.push([
-          `<div className="map-marker-info">` +
-          `<h3>${res.name}</h3>` +
-          `<h2>${res.rating}</h2>` +
-          `<h2>${res.price_range}</h2>` +
-          `<h2>${res.phone_number}</h2>` +
-          `</div>`]);
-
+      if(res.location.indexOf('San Francisco') !== -1){
+          markers.push([res.name, res.get_lng_lat[0], res.get_lng_lat[1]]);
+          infoWindowContent.push([
+            `<div class="map-marker-info">` +
+            `<h3>${res.name}</h3>` +
+            `<span>${this.starRating(res.rating)}</span>` +
+            `<p>${res.price_range}</p>` +
+            `<h2>${res.phone_number}</h2>` +
+            `</div>`]);
+      }
     });
 
     var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -52,10 +52,21 @@ class Map extends React.Component {
       map.fitBounds(bounds);
     }
 
-    // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-    //  this.setZoom(11);
-    //  google.maps.event.removeListener(boundsListener);
-    // });
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+     this.setZoom(11);
+     google.maps.event.removeListener(boundsListener);
+    });
+  }
+
+  starRating(rating){
+    let stars = {
+      1: '✪',
+      2: '✪✪',
+      3: '✪✪✪',
+      4: '✪✪✪✪',
+      5: '✪✪✪✪✪'
+    };
+    return stars[rating];
   }
 
   render(){
