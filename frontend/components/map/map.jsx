@@ -1,7 +1,6 @@
 import React from 'react';
 
 class Map extends React.Component {
-
   componentDidMount(){
     const mapDOMNode = this.refs.map;
     const coord = this.props.position;

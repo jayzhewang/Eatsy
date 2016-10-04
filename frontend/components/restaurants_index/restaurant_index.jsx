@@ -1,6 +1,7 @@
 import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
 import RestaurantIndexImage from './restaurant_index_image';
+import MapRestaurants from '../map_restaurants/map_restaurants';
 
 class RestaurantIndex extends React.Component {
   componentDidMount(){
@@ -43,6 +44,7 @@ class RestaurantIndex extends React.Component {
             </div>
 
             <div className='home-restaurants-index-photos group'>
+              <MapRestaurants restaurants={this.props.restaurants}/>
               {resPhotos}
             </div>
           </div>

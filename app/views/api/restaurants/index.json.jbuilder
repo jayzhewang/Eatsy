@@ -8,4 +8,5 @@ json.array! @restaurants,
               :price_range,
               :phone_number,
               :neighborhood,
-              :photos
+              :photos,
+              :get_lng_lat
