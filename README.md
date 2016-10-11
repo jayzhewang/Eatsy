@@ -1,5 +1,5 @@
 <h1><strong>Eatsy</strong></h1>
-<a href='www.eatsyapp.net'>Eatsy Live</a>
+<a href='http://www.eatsyapp.net/'>Eatsy Live</a>
 
 <h2>Minimum Viable Product</h2>
 <p>Eatsy is a full-stack web application inspired by Yelp. Built on
