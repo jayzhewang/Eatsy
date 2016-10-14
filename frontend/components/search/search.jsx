@@ -4,7 +4,7 @@ class Search extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      category: "",
+      name: "",
       location: ""
     };
 
@@ -15,17 +15,17 @@ class Search extends React.Component {
 
   handleSearch(e){
     e.preventDefault();
-    this.props.queryRestaurants(this.state.category);
+    this.props.queryRestaurants(this.state.name);
     this.changed = true;
   }
 
   _clearSearch(){
-    this.props.queryRestaurants(this.state.category);
+    this.props.queryRestaurants(this.state.name);
   }
 
   update(field){
     if(this.changed &&
-       this.state.category === ""){
+       this.state.name === ""){
       this._clearSearch();
       this.changed = false;
     } else {
@@ -38,9 +38,9 @@ class Search extends React.Component {
       <div>
         <form className='search-field'>
           <input type='text'
-            value={this.state.category}
-            onChange={this.update('category')}
-            placeholder="Category" />
+            value={this.state.name}
+            onChange={this.update('name')}
+            placeholder="Name" />
 
           <button type="submit"
             onClick={this.handleSearch}>

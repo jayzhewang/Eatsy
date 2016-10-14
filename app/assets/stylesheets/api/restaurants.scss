@@ -121,11 +121,9 @@
   cursor: pointer;
 }
 
-.index-item-description:active {
-  overflow: visible;
-  text-overflow: inherit;
-  white-space: normal;
-  transition: all 2s ease-in;
+.index-tem-description-show {
+  width: 450px;
+  display: inline-block;
 }
 
 .index-item-location, .index-item-neighborhood, .index-item-phone-number {

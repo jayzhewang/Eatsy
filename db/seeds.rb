@@ -19,7 +19,7 @@ User.create(username: "Guest", password: "guest_password", email: "eatsy@eatsy-g
 
 
 Restaurant.create(name: "Thai Time",
-                  description: "Delicious and authentic Thai cuisine in the Inner Richmond",
+                  description: "Delicious and authentic Thai cuisine in the Inner Richmond. Authentic Thai staples like larb, curries & noodles served in tiny quarters.",
                   location: "315 8th Ave, San Francisco, CA 94118",
                   hours: "Mon	11:30 am - 10:00 pm--
                           Tue	11:30 am - 10:00 pm--

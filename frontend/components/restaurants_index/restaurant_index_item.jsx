@@ -6,6 +6,7 @@ class RestaurantIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.revealComment = this.revealComment.bind(this);
   }
 
   handleClick() {
@@ -13,16 +14,22 @@ class RestaurantIndexItem extends React.Component {
     hashHistory.push("restaurants/" + restaurantID );
   }
 
+  revealComment(){
+    $(`.index-item-description.${this.resClass}`).
+    removeClass('index-item-description').
+    addClass('index-item-description-show');
+  }
+
   render() {
     const restaurant = this.props.restaurant;
     const photos = restaurant.photos.split(" ");
     const primary = photos[0];
+    this.resClass = restaurant.name.split(' ')[0].split("'").join('');
 
     const rating = restaurant.rating;
     return (
       <div className="restaurant-index-item">
         <div className="index-item-info">
-
 
         <div className='index-item-top-half group'>
           <div className='index-item-photo'>
@@ -67,7 +74,8 @@ class RestaurantIndexItem extends React.Component {
         </div>
 
         <div className="index-item-footer-attr">
-          <span className="index-item-description">
+          <span className={`index-item-description ${this.resClass}`}
+                onClick={this.revealComment}>
             {restaurant.description}
           </span>
         </div>
