@@ -34,6 +34,13 @@ form, label, input, textarea, button {
   background: transparent;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .group:after {
   content: "";
   display: block;
