@@ -61,6 +61,7 @@ class Reviews extends React.Component {
                                    value={this.state.rating}
                                    onStarClick={this.onStarClick.bind(this)}
                                    starColor={'#e5050b'}
+                                   emptyStarColor={'#cccccc'}
                                    renderStarIcon={()=><span
                                    className='star-symbol'>✪</span>}
               />
@@ -184,6 +185,7 @@ class Reviews extends React.Component {
                                              starCount={5}
                                              value={review.rating}
                                              starColor={'#e5050b'}
+                                             emptyStarColor={'#cccccc'}
                                              editing={false}
                                              renderStarIcon={()=>
                                                <span className='star-symbol'>
