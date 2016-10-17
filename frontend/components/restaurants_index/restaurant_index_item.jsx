@@ -46,7 +46,7 @@ class RestaurantIndexItem extends React.Component {
                                    starCount={5}
                                    value={rating}
                                    starColor={'#e5050b'}
-                                   emptyStarColor={'#cccccc'}
+                                   emptyStarColor={'#acacac'}
                                    editing={false}
                                    renderStarIcon={()=><span className='star-symbol'>✪</span>}
               />
