@@ -45,13 +45,22 @@ button:focus {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
+.loader {
+  border: 3px solid #fafafa;
+  border-top: 3px solid black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 0.5s linear infinite;
+  margin-left: 10px;
 }
 
-.cf:after {
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.group:after {
   content: "";
   display: block;
   clear: both;

@@ -11,7 +11,9 @@ class Greeting extends React.Component {
     if(this.props.currentUser){
       const userPhoto = this.props.currentUser.photo;
       if(userPhoto === undefined){
-        return ( <div>Loading...</div> );
+        return (
+          <div className='loader'></div>
+        );
       } else {
         return (
           <hgroup className='greeting-text'>

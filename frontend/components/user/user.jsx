@@ -9,7 +9,9 @@ class Restaurant extends React.Component {
   render() {
 
     if (this.props.user === undefined){
-      return <div>Loading...</div>;
+      return (
+        <div className='loader'></div>
+      );
     } else {
       const user = this.props.user;
       return (

@@ -129,12 +129,16 @@ class Reviews extends React.Component {
     }
 
     if(reviews === undefined){
-      return (<div>Loading...</div>);
+      return (
+        <div className='loader'></div>
+      );
     } else {
       this.reverseCount += 1;
       const users = this.props.parent.users;
       if (users === undefined){
-        return (<div>Loading...</div>);
+        return (
+          <div className='loader'></div>
+        );
       } else {
         return (
           <div>

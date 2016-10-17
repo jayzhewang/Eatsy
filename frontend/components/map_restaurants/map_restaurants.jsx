@@ -13,11 +13,12 @@ class Map extends React.Component {
       fullscreenControl: false
     };
     var restaurants = this.props.restaurants;
-    var map = new google.maps.Map(mapDOMNode, mapOptions);
+    if(restaurants && restaurants.length > 0){
+      var map = new google.maps.Map(mapDOMNode, mapOptions);
 
-    var markers = [], infoWindowContent = [];
-    restaurants.forEach(res=>{
-      if(res.location.indexOf('San Francisco') !== -1){
+      var markers = [], infoWindowContent = [];
+      restaurants.forEach(res=>{
+        if(res.location.indexOf('San Francisco') !== -1){
           markers.push([res.name, res.get_lng_lat[0], res.get_lng_lat[1]]);
           infoWindowContent.push([
             `<div class="map-marker-info">` +
@@ -26,36 +27,37 @@ class Map extends React.Component {
             `<p>${res.price_range}</p>` +
             `<h2>${res.phone_number}</h2>` +
             `</div>`]);
-      }
-    });
+          }
+        });
 
-    var infoWindow = new google.maps.InfoWindow(), marker, i;
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
 
-    const bounds = new google.maps.LatLngBounds();
+        const bounds = new google.maps.LatLngBounds();
 
-    for(var i = 0; i < markers.length; i++ ) {
-      var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-      bounds.extend(position);
-      marker = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: markers[i][0]
-      });
+        for(var i = 0; i < markers.length; i++ ) {
+          var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+          bounds.extend(position);
+          marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+          });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
               infoWindow.setContent(infoWindowContent[i][0]);
               infoWindow.open(map, marker);
-          }
-      })(marker, i));
+            }
+          })(marker, i));
 
-      map.fitBounds(bounds);
+          map.fitBounds(bounds);
+        }
+
+        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+          this.setZoom(11);
+          google.maps.event.removeListener(boundsListener);
+        });
     }
-
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-     this.setZoom(11);
-     google.maps.event.removeListener(boundsListener);
-    });
   }
 
   starRating(rating){
@@ -70,11 +72,9 @@ class Map extends React.Component {
   }
 
   render(){
-    if(this.props.restaurants === undefined){
+    if(!this.props.restaurants || this.props.restaurants.length === 0){
       return (
-        <div>
-          Loading...
-        </div>
+        <div className='loader'></div>
       );
     } else {
       return (

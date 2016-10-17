@@ -43,7 +43,9 @@ class Restaurant extends React.Component {
 
   render() {
     if (this.props.restaurant === undefined){
-      return <div>Loading...</div>;
+      return (
+        <div className='loader'></div>
+      );
     } else {
       const restaurant = this.props.restaurant;
       const photos = restaurant.photos.split(" ");
@@ -94,7 +96,7 @@ class Restaurant extends React.Component {
                   {
                     restaurant.get_lng_lat ?
                     <Map position={restaurant.get_lng_lat} /> :
-                    <div>Map Loading...</div>
+                    <div className='loader'></div>
                   }
                   <h3>{restaurant.location}</h3>
                   <div>{restaurant.neighborhood}</div>
