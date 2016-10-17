@@ -185,7 +185,7 @@ class Reviews extends React.Component {
                                              starCount={5}
                                              value={review.rating}
                                              starColor={'#e5050b'}
-                                             emptyStarColor={'#acacac'}
+                                             emptyStarColor={'#acacacbp'}
                                              editing={false}
                                              renderStarIcon={()=>
                                                <span className='star-symbol'>
