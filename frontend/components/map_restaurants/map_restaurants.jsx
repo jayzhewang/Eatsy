@@ -30,18 +30,29 @@ class Map extends React.Component {
         });
         var infoWindow = new google.maps.InfoWindow(), marker, i;
         const bounds = new google.maps.LatLngBounds();
+        const image = {
+          url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476750892/marker_ete605.png',
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(35, 35)
+        };
         for(var i = 0; i < markers.length; i++ ) {
           var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
           bounds.extend(position);
           marker = new google.maps.Marker({
             position: position,
             map: map,
+            icon: image,
             title: markers[i][0]
           });
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-              infoWindow.setContent(infoWindowContent[i][0]);
-              infoWindow.open(map, marker);
+              const info = new google.maps.InfoWindow({
+                content: infoWindowContent[i][0],
+                pixelOffset: new google.maps.Size(-19, 0)
+              });
+              info.open(map, marker);
             }
           })(marker, i));
           map.fitBounds(bounds);

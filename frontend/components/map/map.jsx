@@ -15,10 +15,17 @@ class Map extends React.Component {
       fullscreenControl: false
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
-
+    const image = {
+      url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476750892/marker_ete605.png',
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35)
+    };
     const marker = new google.maps.Marker({
       position: {lat: coord[0], lng: coord[1]},
       map: this.map,
+      icon: image,
       title: 'Hello World!'
     });
   }
