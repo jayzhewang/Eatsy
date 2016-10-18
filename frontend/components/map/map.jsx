@@ -16,7 +16,7 @@ class Map extends React.Component {
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     const image = {
-      url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476750892/marker_ete605.png',
+      url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476765387/marker_lvbtph.png',
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(17, 34),

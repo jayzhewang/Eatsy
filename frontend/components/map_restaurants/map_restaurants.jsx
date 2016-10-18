@@ -2,9 +2,23 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 class Map extends React.Component {
+  constructor(props){
+    super(props);
+    this.state= {
+      image: {
+        url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476765387/marker_lvbtph.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(35, 35)
+      },
+      mapRendered: false
+    };
+  }
+
   componentDidUpdate(){
     var restaurants = this.props.restaurants;
-    if(restaurants && restaurants.length > 0){
+    if(restaurants && restaurants.length > 0 && !this.state.mapRendered){
       const mapDOMNode = this.refs.map;
       const mapOptions = {
         zoomControl: true,
@@ -30,20 +44,13 @@ class Map extends React.Component {
         });
         var infoWindow = new google.maps.InfoWindow(), marker, i;
         const bounds = new google.maps.LatLngBounds();
-        const image = {
-          url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476750892/marker_ete605.png',
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(35, 35)
-        };
         for(var i = 0; i < markers.length; i++ ) {
           var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
           bounds.extend(position);
           marker = new google.maps.Marker({
             position: position,
             map: map,
-            icon: image,
+            icon: this.state.image,
             title: markers[i][0]
           });
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -61,6 +68,7 @@ class Map extends React.Component {
           this.setZoom(11);
           google.maps.event.removeListener(boundsListener);
         });
+      this.setState({mapRendered: true});
     }
   }
 
