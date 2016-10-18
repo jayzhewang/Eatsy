@@ -6,7 +6,7 @@ class Map extends React.Component {
     super(props);
     this.state= {
       image: {
-        url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476765387/marker_lvbtph.png',
+        url: 'http://res.cloudinary.com/cloudlicious/image/upload/v1476768624/marker-dot-3_t5or3e.png',
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(17, 34),
