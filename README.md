@@ -47,7 +47,7 @@ a new review is created which contains a restaurant_id and a user_id that connec
 
 <p>When a user makes a search query by restaurant name, ActiveRecord queries the database and the controller returns a JSON object to the front end.</p>
 
-```
+```ruby
 def index
   if params[:query]
     @restaurants = Restaurant.where('name ILIKE ?', "%#{params[:query]}%")
@@ -58,7 +58,8 @@ def index
   render :index
 end
 ```
-```
+
+```ruby
 json.array! @restaurants,
               :id,
               :name,
