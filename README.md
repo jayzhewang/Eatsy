@@ -37,10 +37,9 @@ height='129'/>
 <h1>Implementations</h1>
 <p>The database is created with three models, User, Restaurant, and Review. Each time a user logs in and creates a new comment,
 a new review is created which contains a restaurant_id and a user_id that connects all three models.</p>
-<br />
 <p>When a user signs in, window.currentUser ensures persistent session.<p>
 
-```ruby
+```
 <% if signed_in? %>
   window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
 <% end %>
