@@ -14,10 +14,6 @@ class Restaurant extends React.Component {
     this._formSwitch = this._formSwitch.bind(this);
   }
 
-  coomponentDidUpdate(){
-    window.console.log(this);
-  }
-
   componentDidMount(){
     this.props.requestSingleRestaurant(this.props.params.id);
   }
