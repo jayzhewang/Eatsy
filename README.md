@@ -39,10 +39,10 @@ height='129'/>
 a new review is created which contains a restaurant_id and a user_id that connects all three models.</p>
 <p>When a user signs in, window.currentUser ensures persistent session.<p>
 
-```
-<% if signed_in? %>
-  window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
-<% end %>
+```ruby
+if signed_in?
+  window.currentUser = render('api/users/user.json.jbuilder', user: current_user).html_safe
+end 
 ```
 
 <p>When a user makes a search query by restaurant name, ActiveRecord queries the database and the controller returns a JSON object to the front end.</p>
