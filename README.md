@@ -1,6 +1,6 @@
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476903604/Screen_Shot_2016-10-19_at_11.59.09_AM_szwn3u.png'/>
 </br>
-<a href='www.eatsyapp.net'>Live</a>
+<a href='http://www.eatsyapp.net/'>Live</a>
 
 <p>Eatsy is a crowd sourced restaurant review app.</p>
 <p>Find your favorite local restaurants.</p>
