@@ -119,3 +119,11 @@ restaurants.forEach(res=>{
   ...
 }
 ```
+
+<h1>Future Improvements</h1>
+<ol>
+  <li type='I'>User's page, with user stats.</li>
+  <li type='I'>Ability to delete own comments, connect with other users.</li>
+  <li type='I'>Ability to create restaurants.</li>
+  <li type='I'>Ability to save favorite restaurants/comments/photos.</li>
+</ol>
