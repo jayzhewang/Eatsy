@@ -5,7 +5,7 @@
 <p>Eatsy is a crowd sourced restaurant review app.</p>
 <p>Find your favorite local restaurants.</p>
 <p>Login and leave reviews to help other find great restaurants.</p>
-<p>Built with Ruby on Rails and PostgreSQL in back, with React/Redux for on the front.</p>
+<p>Single page application. Built with Ruby on Rails and PostgreSQL in back, with React/Redux for on the front.</p>
 <p>Reliable back end, fluid and interactive front end.</p>
 
 <h1>Features</h1>
