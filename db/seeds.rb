@@ -5,17 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(username: "Jay W", password: "jaypassword", email: "jaywang@gmail.com", age: 23, location: "San Francisco, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473204255/IMG_1384_szmbnp.jpg")
-User.create(username: "Kitty", password: "kittypassword", email: "mr.kitty@gmail.com", age: 6, location: "Los Angeles, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473204261/IMG_0841_gnuu25.jpg")
-User.create(username: "Mary M", password: "marypassword", email: "marym@gmail.com", age: 24, location: "Anaheim, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473410931/o_n2la82.jpg")
-User.create(username: "Olivia", password: "oliviapassword", email: "olivia47@gmail.com", age: 26, location: "Davis, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473411174/o_1_ispt0w.jpg")
-User.create(username: "Ruben A", password: "rubenpassword", email: "rubensabel@gmail.com", age: 30, location: "Sacramento, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473411270/o_2_myzrym.jpg")
-User.create(username: "Tracy B", password: "tracypassword", email: "tracybrunson@gmail.com", age: 35, location: "Roseville, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473425413/o_41_kminpa.jpg")
-User.create(username: "James T", password: "jamespassword", email: "jamestaylor@gmail.com", age: 37, location: "Stockton, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473425412/o_40_s7gu5m.jpg")
-User.create(username: "Angela D", password: "angelapassword", email: "angelababy@gmail.com", age: 28, location: "Bakersfield, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473411608/o_5_mwr7no.jpg")
-User.create(username: "Sherry S", password: "sherrypassword", email: "sherrys12@gmail.com", age: 26, location: "Pasadena, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473412308/o_7_zyssqh.jpg")
-User.create(username: "Kim E", password: "kimpassword", email: "kim.fabulous@gmail.com", age: 28, location: "Oakland, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/v1473412505/o_8_p9eor6.jpg")
-User.create(username: "Guest", password: "guest_password", email: "eatsy@eatsy-guest.com", age: 100, location: "San Francisco, CA", photo: "http://res.cloudinary.com/cloudlicious/image/upload/c_crop,h_250,q_100,r_0,w_250,x_0,y_0/v1473287740/BATMAN_FB_PROFILE_iceocc.jpg")
+User.create(username: "Jay W", password: "jaypassword", email: "jaywang@gmail.com", age: 23, location: "San Francisco, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473204255/IMG_1384_szmbnp.jpg")
+User.create(username: "Kitty", password: "kittypassword", email: "mr.kitty@gmail.com", age: 6, location: "Los Angeles, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473204261/IMG_0841_gnuu25.jpg")
+User.create(username: "Mary M", password: "marypassword", email: "marym@gmail.com", age: 24, location: "Anaheim, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473410931/o_n2la82.jpg")
+User.create(username: "Olivia", password: "oliviapassword", email: "olivia47@gmail.com", age: 26, location: "Davis, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473411174/o_1_ispt0w.jpg")
+User.create(username: "Ruben A", password: "rubenpassword", email: "rubensabel@gmail.com", age: 30, location: "Sacramento, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473411270/o_2_myzrym.jpg")
+User.create(username: "Tracy B", password: "tracypassword", email: "tracybrunson@gmail.com", age: 35, location: "Roseville, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473425413/o_41_kminpa.jpg")
+User.create(username: "James T", password: "jamespassword", email: "jamestaylor@gmail.com", age: 37, location: "Stockton, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473425412/o_40_s7gu5m.jpg")
+User.create(username: "Angela D", password: "angelapassword", email: "angelababy@gmail.com", age: 28, location: "Bakersfield, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473411608/o_5_mwr7no.jpg")
+User.create(username: "Sherry S", password: "sherrypassword", email: "sherrys12@gmail.com", age: 26, location: "Pasadena, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473412308/o_7_zyssqh.jpg")
+User.create(username: "Kim E", password: "kimpassword", email: "kim.fabulous@gmail.com", age: 28, location: "Oakland, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/v1473412505/o_8_p9eor6.jpg")
+User.create(username: "Guest", password: "guest_password", email: "eatsy@eatsy-guest.com", age: 100, location: "San Francisco, CA", photo: "https://res.cloudinary.com/cloudlicious/image/upload/c_crop,h_250,q_100,r_0,w_250,x_0,y_0/v1473287740/BATMAN_FB_PROFILE_iceocc.jpg")
 
 
 Restaurant.create(name: "Thai Time",
@@ -32,7 +32,7 @@ Restaurant.create(name: "Thai Time",
                   price_range: "$",
                   phone_number: "(415) 831-3663",
                   neighborhood: "Inner Richmond",
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473097746/thai_time_front.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423233/o_33_frgzpr.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423233/o_34_tr9qwu.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473097746/thai_time_front.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423233/o_33_frgzpr.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423233/o_34_tr9qwu.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -66,7 +66,7 @@ Anchor serves the Bay Area's favorite clam chowder (San Francisco Chronicle) and
                   price_range: "$$$",
                   phone_number: "(415) 431-3990",
                   neighborhood: 'Castro',
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473097693/anchor_oyster_bar_front.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_35_lwcpaj.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_36_cgabxt.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473097693/anchor_oyster_bar_front.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_35_lwcpaj.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_36_cgabxt.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -98,7 +98,7 @@ Restaurant.create(name: "Boudin Bakery & Cafe",
                   price_range: "$",
                   phone_number: "(415) 281-8200",
                   neighborhood: "Financial District, SoMa",
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473097739/boudin_front.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_38_ricknc.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_39_oxz6zc.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473097739/boudin_front.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_38_ricknc.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473423234/o_39_oxz6zc.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -137,7 +137,7 @@ Restaurant.create(name: "Formoli's Bistro",
                  price_range: "$$",
                  phone_number: "(916) 448-5699",
                  neighborhood: "East Sacramento",
-                 photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_9_klyux4.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_10_trdfot.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_11_ymqxc5.jpg",
+                 photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_9_klyux4.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_10_trdfot.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473412853/o_11_ymqxc5.jpg",
                  _parking: "Street",
                  _attire: "Casual",
                  _ambience: "Trendy",
@@ -169,7 +169,7 @@ Restaurant.create(name: "Sam’s Mediterranean Cuisine",
                   price_range: "$",
                   phone_number: "(530) 758-2855",
                   neighborhood: "Near Downtown",
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473413692/o_12_d6af6z.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473413694/o_13_x5zr9y.png http://res.cloudinary.com/cloudlicious/image/upload/v1473413692/o_14_ftpcjc.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473413692/o_12_d6af6z.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473413694/o_13_x5zr9y.png https://res.cloudinary.com/cloudlicious/image/upload/v1473413692/o_14_ftpcjc.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -201,7 +201,7 @@ Restaurant.create(name: "Imperial Palace",
                  price_range: "$$",
                  phone_number: "(415) 956-9888",
                  neighborhood: "Chinatown",
-                 photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_15_xm2azr.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_16_npun59.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_17_jyjx1j.jpg",
+                 photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_15_xm2azr.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_16_npun59.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473414605/o_17_jyjx1j.jpg",
                  _parking: "Street",
                  _attire: "Casual",
                  _ambience: "Casual",
@@ -233,7 +233,7 @@ Restaurant.create(name: "Burger King",
                   price_range: "$",
                   phone_number: "(415) 775-4211",
                   neighborhood: "Fillmore, Western Addition",
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_18_ilnxf3.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_19_hqgfbx.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_20_wqjg7u.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_18_ilnxf3.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_19_hqgfbx.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473414954/o_20_wqjg7u.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -272,7 +272,7 @@ Restaurant.create(name: "Darbar Restaurant",
                  price_range: "$",
                  phone_number: "(415) 359-1236",
                  neighborhood: "Nob Hill",
-                 photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473415418/o_21_njuumu.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473415417/o_22_sslb4e.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473415418/o_23_zoz10p.jpg",
+                 photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473415418/o_21_njuumu.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473415417/o_22_sslb4e.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473415418/o_23_zoz10p.jpg",
                  _parking: "Street",
                  _attire: "Casual",
                  _ambience: "Casual",
@@ -304,7 +304,7 @@ Restaurant.create(name: "La Taqueria",
                   price_range: "$",
                   phone_number: "(415) 285-7117",
                   neighborhood: "Mission",
-                  photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_27_hyoify.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_29_r3ert1.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_28_tsmz25.jpg",
+                  photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_27_hyoify.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_29_r3ert1.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473417309/o_28_tsmz25.jpg",
                   _parking: "Street",
                   _attire: "Casual",
                   _ambience: "Casual",
@@ -336,7 +336,7 @@ Restaurant.create(name: "Omakase",
                  price_range: "$$$$",
                  phone_number: "(415) 865-0633",
                  neighborhood: "SoMa",
-                 photos: "http://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_30_gqgokg.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_31_zkvjiz.jpg http://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_32_f7vxy1.jpg",
+                 photos: "https://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_30_gqgokg.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_31_zkvjiz.jpg https://res.cloudinary.com/cloudlicious/image/upload/v1473417860/o_32_f7vxy1.jpg",
                  _parking: "Street",
                  _attire: "Dressy",
                  _ambience: "Trendy",
