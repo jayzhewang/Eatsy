@@ -1,6 +1,8 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   context: __dirname,
   entry: './frontend/eatsy.jsx',
   output: {
@@ -26,5 +28,11 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps'
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ]
 };
