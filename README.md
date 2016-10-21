@@ -66,9 +66,9 @@ json.array! @restaurants,
               :description
               ...
 ```
-<p>Before the list of restaurants is passed to the search component on the front end, the search component makes an API request through the Redux loop.
-The restaurant_index component subscribes to the store and listens for changes to state of the list of restaurants.
-Upon receiving the JSON object for the list of restaurants, the store updates it's state, and the restaurant_index component takes the list of restaurants and renders to the user.</p>
+<p>Before the front end receives the JSON object, the search component makes an API request through the Redux loop.
+The restaurant_index component subscribes to the store and listens for changes to current list of restaurants.
+Upon receiving the JSON object for the list of restaurants, the store updates it's state, and the restaurant_index component takes the new list of restaurants and renders to the user.</p>
 
 ```javascript
 handleSearch(e){
@@ -82,7 +82,7 @@ componentDidMount(){
   this.props.requestRestaurants();
 }
 ```
-<p>All front end components subscribe to the store. The global store is made available through the router and provider.</p>
+<p>All react components subscribe intelligently to the store, each listening to specific changes in the store and re-renders appropriately. The global store is made available to all components through the react provider and router.</p>
 
 ```javascript
 <Provider store={store}>
@@ -101,7 +101,7 @@ componentDidMount(){
   </Route>
 </Router>
 ```
-<p>Google maps listens for state change in the list of restaurants and renders accordingly.</p>
+<p>Google maps listens for changes in the list of restaurants and re-renders accordingly.</p>
 
 ```javascript
 restaurants.forEach(res=>{
