@@ -212,6 +212,15 @@ button:focus {
   text-align: center;
 }
 
+.footer-about > p > a:hover {
+  cursor: pointer;
+  color: red;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
 .footer-about-fineprint {
   text-align: center;
   font-size: 10px;
