@@ -44,6 +44,8 @@ class Map extends React.Component {
         });
         var infoWindow = new google.maps.InfoWindow(), marker, i;
         const bounds = new google.maps.LatLngBounds();
+        const infoWindow = new google.maps.InfoWindow({pixelOffset: new google.maps.Size(-19, 0)});
+
         for(var i = 0; i < markers.length; i++ ) {
           var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
           bounds.extend(position);
@@ -55,12 +57,9 @@ class Map extends React.Component {
           });
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-              const info = new google.maps.InfoWindow({
-                content: infoWindowContent[i][0],
-                pixelOffset: new google.maps.Size(-19, 0)
-              });
-              info.open(map, marker);
-            }
+              infoWindow.setContent(infoWindowContent[i][0]);
+              infoWindow.open(map, marker);
+            };
           })(marker, i));
           map.fitBounds(bounds);
         }
