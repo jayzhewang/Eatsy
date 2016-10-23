@@ -16,6 +16,7 @@
  @import './api/restaurant.scss';
  @import './api/reviews.scss';
  @import './api/search.scss';
+ @import './api/scrolling.scss';
 
 //--------------------------------DEFAULT-------------------------------
 html, body, header, footer, section, article, div,
@@ -112,7 +113,7 @@ button:focus {
 .navbar {
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  width: 1015px;
   margin: auto;
   padding: 15px 0;
   background: #0F172B;

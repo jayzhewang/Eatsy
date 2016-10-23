@@ -44,6 +44,7 @@
 .restaurant-middle {
   display: flex;
   width: 1015px;
+  height: 313px;
   margin: auto;
 }
 
@@ -53,6 +54,7 @@
   padding: 10px;
   font-size: 16px;
   background-color: #fff;
+  z-index: 1;
 }
 
 .restaurant-middle-map > h3 {
@@ -68,6 +70,8 @@
 .restaurant-middle-pictures {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
 .restaurant-middle-pictures > div {
@@ -79,16 +83,12 @@
   object-fit: cover;
 }
 
-.primary {
+.primary, .tertiary, ._primary, ._tertiary {
   padding-top: 43px;
 }
 
 .secondary {
   padding-top: 23px;
-}
-
-.tertiary {
-  padding-top: 43px;
 }
 
 //----------------------------------------------------------------------
