@@ -41,8 +41,8 @@
 .primary-slider-left {
   transform: translateX(-224px);
   -webkit-transform: translateX(-224px);
-  animation: primary-slider-left 1s forwards;
-  -webkit-animation: primary-slider-left 1s forwards;
+  animation: primary-slider-left 0.9s forwards;
+  -webkit-animation: primary-slider-left 0.9s forwards;
 }
 
 @keyframes primary-slider-left {
@@ -58,8 +58,8 @@
 .secondary-slider-left {
   transform: translateX(-244.5px) scale(0.84528, 0.84528) translateY(-0.5px);
   -webkit-transform: translateX(-244.5px) scale(0.84528, 0.84528) translateY(-0.5px);
-  animation: secondary-slider-left 1s forwards;
-  -webkit-transform: secondary-slider-left 1s forwards;
+  animation: secondary-slider-left 0.9s forwards;
+  -webkit-transform: secondary-slider-left 0.9s forwards;
 }
 
 @keyframes secondary-slider-left {
@@ -75,8 +75,8 @@
 .tertiary-slider-left {
   transform: translateX(-244.5px) scale(1.18303, 1.18303) translateY(0.5px);
   -webkit-transform: translateX(-244.5px) scale(1.18303, 1.18303) translateY(0.5px);
-  animation: tertiary-slider-left 1s forwards;
-  -webkit-transform: tertiary-slider-left 1s forwards;
+  animation: tertiary-slider-left 0.9s forwards;
+  -webkit-transform: tertiary-slider-left 0.9s forwards;
 }
 
 @keyframes tertiary-slider-left {
@@ -92,8 +92,8 @@
 ._tertiary-slider-left {
   transform: translateX(-224px);
   -webkit-transform: translateX(-224px);
-  animation: _tertiary-slider-left 1s forwards;
-  -webkit-animation: _tertiary-slider-left 1s forwards;
+  animation: _tertiary-slider-left 0.9s forwards;
+  -webkit-animation: _tertiary-slider-left 0.9s forwards;
 }
 
 @keyframes _tertiary-slider-left {
@@ -111,8 +111,8 @@
 .tertiary-slider-right {
   transform: translateX(224px);
   -webkit-transform: translateX(224px);
-  animation: tertiary-slider-right 1s forwards;
-  -webkit-animation: tertiary-slider-right 1s forwards;
+  animation: tertiary-slider-right 0.9s forwards;
+  -webkit-animation: tertiary-slider-right 0.9s forwards;
 }
 
 @keyframes tertiary-slider-right {
@@ -128,8 +128,8 @@
 .secondary-slider-right {
   transform: translateX(244.5px) scale(0.84528, 0.84528) translateY(-0.5px);
   -webkit-transform: translateX(244.5px) scale(0.84528, 0.84528) translateY(-0.5px);
-  animation: secondary-slider-right 1s forwards;
-  -webkit-transform: secondary-slider-right 1s forwards;
+  animation: secondary-slider-right 0.9s forwards;
+  -webkit-transform: secondary-slider-right 0.9s forwards;
 }
 
 @keyframes secondary-slider-right {
@@ -145,8 +145,8 @@
 .primary-slider-right {
   transform: translateX(244.5px) scale(1.18303, 1.18303) translateY(0.5px);
   -webkit-transform: translateX(244.5px) scale(1.18303, 1.18303) translateY(0.5px);
-  animation: primary-slider-right 1s forwards;
-  -webkit-transform: primary-slider-right 1s forwards;
+  animation: primary-slider-right 0.9s forwards;
+  -webkit-transform: primary-slider-right 0.9s forwards;
 }
 
 @keyframes primary-slider-right {
@@ -162,8 +162,8 @@
 ._primary-slider-right {
   transform: translateX(224px);
   -webkit-transform: translateX(224px);
-  animation: _primary-slider-right 1s forwards;
-  -webkit-animation: _primary-slider-right 1s forwards;
+  animation: _primary-slider-right 0.9s forwards;
+  -webkit-animation: _primary-slider-right 0.9s forwards;
 }
 
 @keyframes _primary-slider-right {
