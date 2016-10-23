@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Restaurant from './restaurant';
 
 const mapStateToProps = (state, ownProps) => {
-  window.console.log(ownProps);
   const id = parseInt(ownProps.params.id);
   const restaurant = state.restaurants.find(res=> res.id === id );
   const currentUser = state.session.currentUser;
