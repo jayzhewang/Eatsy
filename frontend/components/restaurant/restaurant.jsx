@@ -20,11 +20,18 @@ class Restaurant extends React.Component {
     this.props.requestSingleRestaurant(this.props.params.id);
   }
 
+  componentWillUnmount(){
+    clearInterval(this.autoScroll);
+  }
+
   componentDidUpdate(){
     let photos = this.props.restaurant.photos.split(" ");
     let res = this.props.restaurant;
     if(res && photos.length > this.state.photos.length){
-      this.setState({photos: photos});
+      this.setState({
+        photos: photos
+      });
+      this.autoScroll = setInterval(()=>this._scrollPictures('left'), 5000);
     }
   }
 
@@ -50,6 +57,8 @@ class Restaurant extends React.Component {
   _scrollPictures(dir){
     if(!this.state.scrolling){
       this.setState({scrolling: true});
+      clearInterval(this.autoScroll);
+      this.autoScroll = setInterval(()=>this._scrollPictures('left'), 5000);
       let photos = this.state.photos;
       if(dir === 'left'){
         let newPhotos = photos.slice(1, photos.length + 1);
