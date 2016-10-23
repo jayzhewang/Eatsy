@@ -78,7 +78,7 @@ class Restaurant extends React.Component {
             scrolling: false
           });
           $('._tertiary').addClass('z-1');
-        }, 500);
+        }, 1000);
       } else {
         let newPhotos = photos.slice(0, photos.length - 1);
         newPhotos.unshift(photos[photos.length - 1]);
@@ -97,7 +97,7 @@ class Restaurant extends React.Component {
             scrolling: false
           });
           $('._primary').addClass('z-1');
-        }, 500);
+        }, 1000);
       }
     }
   }
