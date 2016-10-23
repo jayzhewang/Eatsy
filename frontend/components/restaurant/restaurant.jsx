@@ -24,8 +24,6 @@ class Restaurant extends React.Component {
     let photos = this.props.restaurant.photos.split(" ");
     let res = this.props.restaurant;
     if(res && photos.length > this.state.photos.length){
-      photos.unshift(photos[0]);
-      photos.push(photos[photos.length - 1]);
       this.setState({photos: photos});
     }
   }
