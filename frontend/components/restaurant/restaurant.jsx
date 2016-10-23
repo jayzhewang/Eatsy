@@ -207,8 +207,6 @@ class Restaurant extends React.Component {
                        onClick={()=>this._scrollPictures('right')}>
                     {arrowRight}
                   </div>
-
-                  <div className='right-cover-block'></div>
                 </div>
               </header>
             </div>

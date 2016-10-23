@@ -175,14 +175,3 @@
   0% { -webkit-transform: translateX(0%); }
   100% { -webkit-transform: translateX(224px); }
 }
-
-.right-cover-block {
-  display: block;
-  background: #f5f5f5;
-  width: 133px;
-  height: 224px;
-  padding-top: 23px;
-  position: absolute;
-  left: 713px;
-  z-index: 1;
-}
