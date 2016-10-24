@@ -19,7 +19,7 @@ User.create(username: "Guest", password: "guest_password", email: "eatsy@eatsy-g
 
 Restaurant.create(name: "Omakase",
                  description: "Specialties: Omakase offers three different fixed-price tasting menus that will take you through your senses. The culinary journey you experience will introduce you to the many flavors of Japanese cuisine. Our focus is to show diners a series of dishes that combine creativity and various Japanese cooking techniques. To enhance your experience, we showcase the cuisine with the beauty of Japanese pottery. Premium sakes are individually selected to complement your meal as you enjoy the day's best selected fishes. Our fishes are flown in 3x a week from Tsukiji Fish Market, Tokyo, Japan -- the famed and largest fish market in the world -- to assure freshness and quality.",
-                 location: "665 Townsend St San Francisco, CA 94103",
+                 location: "665 Townsend St-San Francisco, CA 94103",
                  hours: "Mon	7:30 am - 6:30 pm--
                          Tue	7:30 am - 6:30 pm--
                          Wed	7:30 am - 6:30 pm--
@@ -51,7 +51,7 @@ Restaurant.create(name: "Omakase",
 
 Restaurant.create(name: "Thai Time",
                   description: "Delicious and authentic Thai cuisine in the Inner Richmond. Authentic Thai staples like larb, curries & noodles served in tiny quarters.",
-                  location: "315 8th Ave, San Francisco, CA 94118",
+                  location: "315 8th Ave-San Francisco, CA 94118",
                   hours: "Mon	11:30 am - 10:00 pm--
                           Tue	11:30 am - 10:00 pm--
                           Wed	11:30 am - 10:00 pm--
@@ -85,7 +85,7 @@ Restaurant.create(name: "Anchor Oyster Bar",
                   description: "We are a small locally owned seafood restaurant and fish market in the Castro. Owned and operated by the same owner since 1977, San Francisco's one-and-only Anchor Oyster Bar has been serving fresh sustainably caught fish, shellfish, crab, and delicious simply prepared seafood dishes for over 30 years.
 
 Anchor serves the Bay Area's favorite clam chowder (San Francisco Chronicle) and the best oysters on the West coast (Coastal Living Magazine). Check us out on the third season of Check Please Bay Area!",
-                  location: "579 Castro St San Francisco, CA 94114",
+                  location: "579 Castro St-San Francisco, CA 94114",
                   hours: "Mon	11:30 am - 10:00 pm--
                           Tue	11:30 am - 10:00 pm--
                           Wed	11:30 am - 10:00 pm--
@@ -117,7 +117,7 @@ Anchor serves the Bay Area's favorite clam chowder (San Francisco Chronicle) and
 
 Restaurant.create(name: "La Taqueria",
                   description: "This no-frills taqueria serves Mexican eats, including famed traditional-style, rice-free burritos.",
-                  location: "2889 Mission St San Francisco, CA 94110",
+                  location: "2889 Mission St-San Francisco, CA 94110",
                   hours: "Mon	11:00 am - 9:00 pm--
                           Tue	11:00 am - 9:00 pm--
                           Wed	11:00 am - 9:00 pm--
@@ -149,7 +149,7 @@ Restaurant.create(name: "La Taqueria",
 
 Restaurant.create(name: "Boudin Bakery & Cafe",
                   description: "Headquartered in San Francisco, Boudin Bakery is world-famous for The Original San Francisco Sourdough™, which is baked with the same Mother Dough, or sourdough starter, used since 1849. Born in the Gold Rush, Boudin is the oldest continuously operating business in San Francisco. Because each loaf is made from a portion of the original sourdough starter, Boudin Sourdough is one of a kind. With its delicious tangy flavor, golden crunchy crust, and soft chewy center - along with its famous aroma - it has been described as 'a sensory experience in a simple loaf of bread.'' Boudin at the Wharf, located in the heart of San Francisco's renowned waterfront, is Boudin's flagship facility and home to Bistro Boudin, Boudin Museum & Bakery Tour, a demonstration bakery, Bakers Hall Marketplace and a Boudin Café. Boudin bread can be purchased at the Wharf and all Boudin restaurants located throughout California. Boudin also offers catering and operates a gift catalog business, which can be found online.",
-                  location: "619 Market Street San Francisco, CA 94105",
+                  location: "619 Market Street-San Francisco, CA 94105",
                   hours: "Mon	7:30 am - 6:30 pm--
                           Tue	7:30 am - 6:30 pm--
                           Wed	7:30 am - 6:30 pm--
@@ -181,7 +181,7 @@ Restaurant.create(name: "Boudin Bakery & Cafe",
 
 Restaurant.create(name: "Imperial Palace",
                 description: "Classic Chinese dim sum, lunch & dinner menus, plus live entertainment some nights.",
-                location: "619 Market Street San Francisco, CA 94105",
+                location: "619 Market Street-San Francisco, CA 94105",
                 hours: "Mon	8:30 am - 10:00 pm--
                         Tue	8:30 am - 10:00 pm--
                         Wed	8:30 am - 10:00 pm--
@@ -213,7 +213,7 @@ Restaurant.create(name: "Imperial Palace",
 
 Restaurant.create(name: "Burger King",
                  description: "Burger King, often abbreviated as BK, is an American global chain of hamburger fast food restaurants headquartered in unincorporated Miami-Dade County, Florida, United States. The company began in 1953 as Insta-Burger King, a Jacksonville, Florida-based restaurant chain.",
-                 location: "4780 Mission St San Francisco, CA 94112",
+                 location: "4780 Mission St-San Francisco, CA 94112",
                  hours: "Mon	6:00 am - 10:00 pm--
                          Tue	6:00 am - 10:00 pm--
                          Wed	6:00 am - 10:00 pm--
@@ -245,7 +245,7 @@ Restaurant.create(name: "Burger King",
 
 Restaurant.create(name: "Darbar Restaurant",
                 description: "Specialties: Luncheon Buffet: 10-Courses of Authentic Cuisine Including Appetizers, 3 Meat and 3 Vegetarian Entrees, Fresh Baked Naan, Rice, Salad & Tea. All You Can Eat   $9.99! We offer a wide array of cuisine combining the best of Pakistan and India awaits you! Come discover the wonderful and exotically spiced dishes prepared fresh and cooked to perfection. Our extensive menu of exceptional quality, authentic cuisine at low prices is available for dine in, takeout, catering and free delivery to limited areas.",
-                location: "1412 Polk St San Francisco, CA 94109",
+                location: "1412 Polk St-San Francisco, CA 94109",
                 hours: "Mon	11:30 am - 3:00 pm--
                              5:00 pm - 10:100 pm--
                         Tue	11:30 am - 3:00 pm--
@@ -284,7 +284,7 @@ Restaurant.create(name: "Darbar Restaurant",
 
 Restaurant.create(name: "Formoli's Bistro",
                  description: "Formoli’s Bistro is owned and operated by husband and wife team, Chef Aimal Formoli and Suzanne Ricci. Our food is New American and incorporates European influences, drawing mostly from France, Spain, and Italy. Chef Formoli proudly sources our food from local California farmers and strives to create unique menus that include fresh seasonal ingredients. We pride ourselves on preparing excellent food, as well as delivering great service.",
-                 location: "3839 J St Sacramento, CA 95816",
+                 location: "3839 J St-Sacramento, CA 95816",
                  hours: "Mon	11:30 am - 2:30 pm--
                               5:00 pm - 9:30 pm--
                          Tue	11:30 am - 2:30 pm--
@@ -323,7 +323,7 @@ Restaurant.create(name: "Formoli's Bistro",
 
 Restaurant.create(name: "Sam’s Mediterranean Cuisine",
                   description: "Sam's offers arguably the best falafel in Davis, and really friendly employees. It seems to be an authentic family-owned and -run restaurant. On Mondays, if you order the falafel you get a free soft drink! This is an incredible thing and should not be missed. On the walls inside Sam's is a painting of a Mediterranean countryside. They also serve very good cheeseburgers, hummus, dolma, baklava, and shawarma. They play Arabic music as well, which as we all know is the best music in the entire world.",
-                  location: "301 B St Davis, CA 95616",
+                  location: "301 B St-Davis, CA 95616",
                   hours: "Mon	11:30 am - 7:30 pm--
                           Tue	11:30 am - 7:30 pm--
                           Wed	11:30 am - 7:30 pm--

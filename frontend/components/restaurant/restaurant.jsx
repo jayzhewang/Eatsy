@@ -110,11 +110,12 @@ class Restaurant extends React.Component {
     } else {
       const restaurant = this.props.restaurant;
       const rating = restaurant.rating;
-      const yesNo = { true: "Yes", false: "No"};
-      const hours = restaurant.hours;
+      const location = restaurant.location.split('-');
       const hoursArray = [];
       const arrowLeft = '<';
       const arrowRight = '>';
+      const yesNo = { true: "Yes", false: "No"};
+      const hours = restaurant.hours;
       hours.split('--').forEach((hour, i)=>{
         hoursArray.push(<li className="restaurant-hour-list"
                             key={`hourlist${i}`}>
@@ -158,7 +159,10 @@ class Restaurant extends React.Component {
                     <Map position={restaurant.get_lng_lat} /> :
                     <div className='loader'></div>
                   }
-                  <h3>{restaurant.location}</h3>
+                  <div className='map-headers'>
+                    <h3>{location[0]}</h3>
+                    <h3>{location[1]}</h3>
+                  </div>
                   <div>{restaurant.neighborhood}</div>
                   <div>{restaurant.phone_number}</div>
                 </div>
