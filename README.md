@@ -19,20 +19,27 @@ height='145'/>
 width='400'
 height='61'/>
 <br/>
+<p>Beautiful pictures with scrolling.</p>
+<video width="400" height="148" controls>
+  <source src="https://res.cloudinary.com/cloudlicious/video/upload/v1477337642/scrolling_czjuy5.mov"
+  type="video/mov">
+Your browser does not support the video tag.
+</video>
+<br />
 <p>Simple, intuitive login and signup interface.</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904651/Screen_Shot_2016-10-19_at_12.17.13_PM_z2epsd.png'
 width='400'
 height='375'/>
 <br/>
+<p>Leave reviews.</p>
+<img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904895/Screen_Shot_2016-10-19_at_12.21.08_PM_m9b9tm.png'
+width='400'
+height='129'/>
 <p>Google Maps integration for easy location overview</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904833/Screen_Shot_2016-10-19_at_12.20.19_PM_a9q2au.png'
 width='400'
 height='266'/>
 <br/>
-<p>Leave reviews.</p>
-<img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904895/Screen_Shot_2016-10-19_at_12.21.08_PM_m9b9tm.png'
-width='400'
-height='129'/>
 
 <h1>Implementations</h1>
 <p>The database is created with three models, User, Restaurant, and Review. Each time a user logs in and creates a new comment,
@@ -45,7 +52,18 @@ a new review is created which contains a restaurant_id and a user_id that connec
 <% end %>
 ```
 
-<p>When a user makes a search query by restaurant name, ActiveRecord queries the database and the controller returns a JSON object to the front end.</p>
+<p>When a user makes a search query by restaurant name, the search component makes an API request to the rails server and enters the Redux loop.
+The restaurant_index component subscribes to the store and listens for changes to the current list of restaurants.</p>
+
+```javascript
+handleSearch(e){
+  e.preventDefault();
+  this.props.queryRestaurants(this.state.name);
+  this.changed = true;
+}
+```
+
+<p>ActiveRecord queries the database and the controller returns a JSON object to the front end.</p>
 
 ```ruby
 def index
@@ -61,28 +79,21 @@ end
 
 ```ruby
 json.array! @restaurants,
-              :id,
-              :name,
-              :description
-              ...
+:id,
+:name,
+:description
+...
 ```
-<p>Before the front end receives the JSON object, the search component makes an API request through the Redux loop.
-The restaurant_index component subscribes to the store and listens for changes to current list of restaurants.
-Upon receiving the JSON object for the list of restaurants, the store updates it's state, and the restaurant_index component takes the new list of restaurants and renders to the user.</p>
 
-```javascript
-handleSearch(e){
-  e.preventDefault();
-  this.props.queryRestaurants(this.state.name);
-  this.changed = true;
-}
-```
+<p>Upon receiving the JSON object for the list of restaurants, the store updates it's state, and the restaurant_index component takes the new list of restaurants and renders to the user.</p>
+
 ```javascript
 componentDidMount(){
   this.props.requestRestaurants();
 }
 ```
-<p>All react components subscribe intelligently to the store, each listening to specific changes in the store and re-renders appropriately. The global store is made available to all components through the react provider and router.</p>
+
+<p>All react components subscribe intelligently to the store, each listening to specific changes in the store and re-renders accordingly. The global store is made available to all components through the react provider and router.</p>
 
 ```javascript
 <Provider store={store}>
@@ -117,6 +128,40 @@ restaurants.forEach(res=>{
     }
   });
   ...
+}
+```
+
+<p>The scroll feature of a restaurant's picture frame is achieved by using a combination of transform/keyframe and jQuery's DOM manipulation.</p>
+<p>5 pictures are loaded at a time with only the middle 3 visible. This is achieved by setting the pictures' container to 'overflow: hidden'. A Picture's horizontal translation and resizing is created by setting its transform and keyframes properties. Since each actively scrolling picture translates and resizes differently, each has a different active class appended on using jQuery. The transform property has the same duration as the setTimeout function, which clears the active classes of each picture and sets the new current position of these pictures.</p>
+
+```javascript
+$('.primary').addClass('primary-slider-left');
+$('.secondary').addClass('secondary-slider-left');
+$('.tertiary').addClass('tertiary-slider-left');
+$('._tertiary').addClass('_tertiary-slider-left');
+$('._tertiary').removeClass('z-1');
+setTimeout(()=>{
+  $('.primary').removeClass('primary-slider-left');
+  $('.secondary').removeClass('secondary-slider-left');
+  $('.tertiary').removeClass('tertiary-slider-left');
+  $('._tertiary').removeClass('_tertiary-slider-left');
+  this.setState({
+    photos: newPhotos,
+    scrolling: false
+  });
+  $('._tertiary').addClass('z-1');
+}, 900);
+```
+
+<p>Auto scrolling of the picture frame is achieved using setInterval which is invoked when the pictures in the state have been updated. Auto scrolling is deactivated when user leaves the page to prevent the stacking effect of simultaneous setIntervals. It is accomplished by invoking clearInterval in react's componentWillUnmount.</p>
+
+```javascript
+...
+this.autoScroll = setInterval(()=>this._scrollPictures('left'), 5000);
+...
+
+componentWillUnmount(){
+  clearInterval(this.autoScroll);
 }
 ```
 
