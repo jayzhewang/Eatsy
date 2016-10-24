@@ -20,7 +20,7 @@ width='400'
 height='61'/>
 <br/>
 <p>Beautiful pictures with scrolling.</p>
-<video width="400" height="148" controls>
+<video width="400" height="148">
   <source src="https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4"
   type="video/mp4">
 Your browser does not support the video tag.
