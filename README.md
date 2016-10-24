@@ -20,11 +20,13 @@ width='400'
 height='61'/>
 <br/>
 <p>Beautiful pictures with scrolling.</p>
-<video width="400" height="148">
+<!-- <video width="400" height="148">
   <source src="https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4"
   type="video/mp4">
 Your browser does not support the video tag.
-</video>
+</video> -->
+
+[scroll](https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4)
 <br />
 <p>Simple, intuitive login and signup interface.</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904651/Screen_Shot_2016-10-19_at_12.17.13_PM_z2epsd.png'
