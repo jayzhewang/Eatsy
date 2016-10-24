@@ -14,29 +14,31 @@
 width='400'
 height='145'/>
 <br/>
+<br/>
 <p>Search restaurants by name.<p/>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476905078/Screen_Shot_2016-10-19_at_12.24.09_PM_rhwyi8.png'
 width='400'
 height='61'/>
 <br/>
+<br/>
 <p>Beautiful pictures with scrolling.</p>
-<!-- <video width="400" height="148">
-  <source src="https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4"
-  type="video/mp4">
-Your browser does not support the video tag.
-</video> -->
-
-[scroll](https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4)
+<img src='https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4'
+     width='400'
+     height='148' />
+<br />
 <br />
 <p>Simple, intuitive login and signup interface.</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904651/Screen_Shot_2016-10-19_at_12.17.13_PM_z2epsd.png'
 width='400'
 height='375'/>
 <br/>
+<br/>
 <p>Leave reviews.</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904895/Screen_Shot_2016-10-19_at_12.21.08_PM_m9b9tm.png'
 width='400'
 height='129'/>
+<br />
+<br />
 <p>Google Maps integration for easy location overview</p>
 <img src='http://res.cloudinary.com/cloudlicious/image/upload/v1476904833/Screen_Shot_2016-10-19_at_12.20.19_PM_a9q2au.png'
 width='400'
