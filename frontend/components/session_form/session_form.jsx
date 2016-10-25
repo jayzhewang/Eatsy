@@ -89,7 +89,13 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((err, i)=>{
-          return <li className="list-unstyled" type='disc' key={`err-${i}`}>{err}</li>;
+          return (
+            <li className="list-unstyled"
+                type='disc'
+                key={`err-${i}`}>
+              {err}
+            </li>
+          );
         })}
       </ul>
     );
@@ -97,73 +103,53 @@ class SessionForm extends React.Component {
 
   render(){
       return (
-          <div className='login-form-container group'>
-            <div className='login-form-message'>
-              {this.renderErrors()}
-            </div>
-
-            <div className='login-form-container-bottom group'>
-              {this.loginOrSignup()}
+        <div className='login-form-container'>
+          <div className='login-form-message'>
+            {this.renderErrors()}
           </div>
+          {this.loginOrSignup()}
         </div>
       );
   }
 
   _newUser() {
     return (
-      <div>
-        <label className='input-field'>
-          <input type='text'
-            placeholder='Username'
-            value={this.state.username}
-            onChange={this.update('username')}
-            className='login-input' />
-        </label>
-        <label className='input-field'>
-          <input type='password'
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className='login-input' />
-        </label>
+      <div className='input-field'>
+        <input type='text'
+          placeholder='Username'
+          value={this.state.username}
+          onChange={this.update('username')} />
+
+        <input type='password'
+          placeholder="Password"
+          value={this.state.password}
+          onChange={this.update('password')} />
       </div>
     );
   }
 
   _returnUser(){
     return (
-      <div>
-        <label className='input-field'>
-            <input type='text'
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className='login-input' />
-        </label>
+      <div className='input-field'>
+        <input type='text'
+          placeholder="Email"
+          value={this.state.email}
+          onChange={this.update('email')} />
 
-        <label className='input-field'>
-            <input type='text'
-              placeholder='Age'
-              value={this.state.age}
-              onChange={this.update('age')}
-              className='login-input' />
-        </label>
+        <input type='text'
+          placeholder='Age'
+          value={this.state.age}
+          onChange={this.update('age')} />
 
-        <label className='input-field'>
-            <input type='text'
-              placeholder='Gender'
-              value={this.state.gender}
-              onChange={this.update('gender')}
-              className='login-input' />
-        </label>
+        <input type='text'
+          placeholder='Gender'
+          value={this.state.gender}
+          onChange={this.update('gender')} />
 
-        <label className='input-field'>
-            <input type='text'
-              placeholder='Location'
-              value={this.state.location}
-              onChange={this.update('location')}
-              className='login-input' />
-        </label>
+        <input type='text'
+          placeholder='Location'
+          value={this.state.location}
+          onChange={this.update('location')} />
       </div>
     );
   }
@@ -171,27 +157,22 @@ class SessionForm extends React.Component {
   loginOrSignup() {
     if (this.props.formType === 'login'){
       return (
-        <div>
-          <form onSubmit={this.handleSubmit} className='login-form-return-user group'>
-              <div className='login-form-fill-info group'>
-                <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
-                <div className='login-form-text'>
-                  <h3>
-                    { this.navLink() }
-                  </h3>
-
-                  {this._newUser()}
-
-                  <div className='input-field-submit'>
-                    <input type='submit' value='Submit' className='login-submit-button'/>
-                    <br/>
-                    <input type='submit' value='Guest' className='login-submit-button' onClick={this.handleGuestLogin} />
-                  </div>
-                </div>
+        <div className='login-form-container-bottom'>
+          <form onSubmit={this.handleSubmit} className='login-form-return-user'>
+            <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
+            <div className='login-form-text'>
+              <h3>
+                { this.navLink() }
+              </h3>
+              {this._newUser()}
+              <div className='input-field-submit'>
+                <input type='submit' value='Submit' />
+                <input type='submit' value='Guest' onClick={this.handleGuestLogin} />
               </div>
+            </div>
           </form>
 
-          <div className='login-form-image group'>
+          <div className='login-form-image'>
               <img src='https://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
                 alt='login-img'
                 height='450'
@@ -202,31 +183,26 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div className='login-form-new-user'>
-          <form onSubmit={this.handleSubmit} className='login-form-new-user group'>
-              <div className='login-form-fill-info group'>
-                <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
-                <div className='login-form-text'>
-                  <h3>
-                    { this.navLink() }
-                  </h3>
-
-                  {this._newUser()}
-                  {this._returnUser()}
-
-                  <div className='input-field-submit'>
-                    <input type='submit' value='Submit' className='login-submit-button'/>
-                  </div>
-                </div>
+        <div className='login-form-container-bottom'>
+          <form onSubmit={this.handleSubmit} >
+            <h1 className='login-form-message-switch'>{ this.navMessage() }</h1>
+            <div className='login-form-text'>
+              <h3>
+                { this.navLink() }
+              </h3>
+              {this._newUser()}
+              {this._returnUser()}
+              <div className='input-field-submit'>
+                <input type='submit' value='Submit' />
               </div>
+            </div>
           </form>
 
-          <div className='login-form-image group'>
+          <div className='login-form-image'>
               <img src='https://res.cloudinary.com/cloudlicious/image/upload/c_limit,h_776/v1473374335/login-restaurant-image_r2tyj6.jpg'
                 alt='login-img'
                 height='450'
-                width='450'
-          />
+                width='450' />
           </div>
         </div>
       );

@@ -1,8 +1,7 @@
 import React from 'react';
-import STARS from '../star_ratings';
 import ReviewsContainer from '../reviews/reviews_container';
 
-class Restaurant extends React.Component {
+class User extends React.Component {
   componentDidMount(){
     this.props.requestSingleUser(this.props.params.id);
   }
@@ -48,4 +47,4 @@ class Restaurant extends React.Component {
   }
 }
 
-export default Restaurant;
+export default User;

@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Greeting extends React.Component {
-
-  componentDidMount(){
-
-  }
-
   render(){
     if(this.props.currentUser){
       const userPhoto = this.props.currentUser.photo;

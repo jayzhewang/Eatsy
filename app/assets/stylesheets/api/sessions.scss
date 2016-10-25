@@ -1,64 +1,47 @@
-// Place all the styles related to the api/sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.login-form {
-  align-items: flex-start;
-}
-
 .login-form-container {
+  display: block;
   font-family: sans-serif;
-  height: 800px;
-  display: block;
-  width: 74%;
+  height: 900px;
+  min-width: 900px;
   margin: auto;
-  min-width: 840px;;
 }
 
-.login-form-container-bottom > div {
-  min-width: 500px;
-  padding: 100px 200px 0 200px;
-  width: 65%;
-  //
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  position: relative;
-}
-
-.login-form-image {
+.login-form-container-bottom {
   display: block;
-  float: right;
-  padding-top: 5.5px;
+  width: 950px;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  margin: auto;
 }
 
-.login-form-image > img {
-  border-radius: 50%;
-  float: left;
+.login-form-container-bottom > form {
+  width: 358px;
+  padding-right: 39px;
 }
 
 .login-form-message {
   text-align: center;
-  width: 100%;
 }
 
-.login-form-fill-info {
-  padding-right: 100px;
+.login-form-image {
+  display: block;
+  padding: 11.5px 0 0 80px;
+}
+
+.login-form-image > img {
+  border-radius: 50%;
 }
 
 .login-form-return-user {
-  padding-top: 73.5px;
-}
-
-.login-form-new-user {
-  // padding-top: 20px;
+  padding-top: 87.5px;
 }
 
 .login-form-message-switch {
   font-size: 26px;
   font-weight: bold;
-  color: #0F172B;
+  color: #0f172b;
   margin-bottom: 18px;
-  width: 100%;
 }
 
 .login-form-text {
@@ -74,41 +57,23 @@
   border-radius: 3px;
   height: 40px;
   width: 350px;
-  padding-left: 5px;
+  margin-bottom: 10px;
+  padding: 0 0 0 5px;
 }
 
 .input-field-submit > input {
   border: 1px solid #ccc;
   margin-top: 10px;
-  border: 1px solid #ccc;
   border-radius: 3px;
   height: 40px;
-  width: 350px;
-  padding-left: 5px;
+  width: 355px;
   text-align: center;
-  font-weight: bold;
-}
-
-.login-input {
-  width: 250px;
-  margin-bottom: 10px;
-  display: block;
-  box-sizing: border-box;
-}
-
-.login-submit-form {
-  margin-left: 150px;
-  width: 100px;
-}
-
-.login-submit-button {
-  width: 250px;
-  border: none;
-  background-color: #57AD57;
   color: white;
+  font-weight: bold;
+  background-color: #57AD57;
 }
 
-.login-submit-button:hover {
+.input-field-submit > input:hover {
   background-color: #0F172B;
   cursor: pointer;
 }

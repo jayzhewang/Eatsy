@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class Footer extends React.Component {
   render(){
     return (
-      <div className='footer group'>
+      <div className='footer'>
         <div className='footer-container'>
           <div className='footer-about'>
             <p>Eatsy is a crowd sourced restaurant review app, created by me, as my full stack project at <a href='https://www.appacademy.io/'>App Academy</a></p>
