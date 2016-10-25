@@ -22,9 +22,9 @@ height='61'/>
 <br/>
 <br/>
 <p>Beautiful pictures with scrolling.</p>
-<video width='400' height='148'>
-<source src='https://res.cloudinary.com/cloudlicious/video/upload/v1477339128/scrolling_vb1mup.mp4' type='video/mp4'>
-</video>
+<img src='app/assets/images/scroll.gif'
+     width='400'
+     height='148'/>
 <br />
 <br />
 <p>Simple, intuitive login and signup interface.</p>
