@@ -157,7 +157,7 @@ class Restaurant extends React.Component {
                   {
                     restaurant.get_lng_lat ?
                     <Map position={restaurant.get_lng_lat} /> :
-                    <div className='loader'></div>
+                    <div className='map-loader-2'></div>
                   }
                   <div className='map-headers'>
                     <h3>{location[0]}</h3>

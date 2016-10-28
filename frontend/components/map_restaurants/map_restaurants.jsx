@@ -11,13 +11,14 @@ class Map extends React.Component {
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(35, 35)
-      }
+      },
+      restaurants: []
     };
   }
 
   componentDidUpdate(){
     var restaurants = this.props.restaurants;
-    if(restaurants && restaurants.length > 0){
+    if(restaurants && restaurants.length !== this.state.restaurants.length){
       const mapDOMNode = this.refs.map;
       const mapOptions = {
         zoomControl: true,
@@ -66,6 +67,7 @@ class Map extends React.Component {
           this.setZoom(11);
           google.maps.event.removeListener(boundsListener);
         });
+      this.setState({restaurants: restaurants});
     }
   }
 
@@ -80,17 +82,23 @@ class Map extends React.Component {
     return stars[rating];
   }
 
-  render(){
-    // if(!this.props.restaurants || this.props.restaurants.length === 0){
-    //   return (
-    //     <div className='loader'></div>
-    //   );
-    // } else {
+  loader(){
+    if(this.state.restaurants){
       return (
-        <div className="map-restaurants" ref="map">
+        <div className="map-restaurants-empty">
+          <div className='map-loader'></div>
         </div>
       );
-    // }
+    }
+  }
+
+  render(){
+    return (
+      <div>
+        {this.loader()}
+        <div className="map-restaurants" ref="map"></div>
+      </div>
+    );
   }
 }
 

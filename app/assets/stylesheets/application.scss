@@ -56,6 +56,34 @@ button:focus {
   margin-left: 10px;
 }
 
+.map-loader {
+  border: 3px solid #fafafa;
+  border-top: 3px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.5s linear infinite;
+  margin: 115px 179px;
+}
+
+.map-restaurants-empty {
+  height: 250px;
+  width: 378px;
+  border: 1px solid #cccccc;
+  margin-bottom: 20px;
+  position: absolute;
+}
+
+.map-loader-2 {
+  border: 3px solid #fafafa;
+  border-top: 3px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.5s linear infinite;
+  margin: 96px 128.5px;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -81,7 +109,7 @@ button:focus {
 
 .map-restaurants {
   height: 250px;
-  width: 410;
+  width: 378px;
   border: 1px solid #cccccc;
   margin-bottom: 20px;
 }
