@@ -66,6 +66,7 @@ class Map extends React.Component {
           this.setZoom(11);
           google.maps.event.removeListener(boundsListener);
         });
+      this.setState(this.state);  
     }
   }
 
