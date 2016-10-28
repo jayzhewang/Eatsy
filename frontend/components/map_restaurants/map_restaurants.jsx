@@ -4,7 +4,7 @@ import StarRatingComponent from 'react-star-rating-component';
 class Map extends React.Component {
   constructor(props){
     super(props);
-    this.state= {
+    this.state = {
       image: {
         url: 'https://res.cloudinary.com/cloudlicious/image/upload/v1476768624/marker-dot-3_t5or3e.png',
         size: new google.maps.Size(71, 71),
@@ -66,7 +66,6 @@ class Map extends React.Component {
           this.setZoom(11);
           google.maps.event.removeListener(boundsListener);
         });
-      this.setState(this.state);  
     }
   }
 
