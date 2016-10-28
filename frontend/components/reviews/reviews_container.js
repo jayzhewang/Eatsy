@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import Reviews from './reviews';
 
 const mapStateToProps = (state, ownProps) => {
-  const parent = (ownProps.restaurant !== undefined) ? ownProps.restaurant : ownProps.user;
-
+  const parent = ownProps.restaurant ? ownProps.restaurant : ownProps.user;
   return {
           parent: parent,
           currentUser: state.session.currentUser,
@@ -12,9 +11,9 @@ const mapStateToProps = (state, ownProps) => {
         };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {createReview: review => dispatch(createReview(review))};
-};
+const mapDispatchToProps = dispatch => ({
+  createReview: review => dispatch(createReview(review))
+});
 
 export default connect(
   mapStateToProps,

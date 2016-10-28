@@ -1,6 +1,6 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import StarRatingComponent from 'react-star-rating-component';
-// import {withRouter} from 'react-router';
 
 class Reviews extends React.Component {
   constructor(props){
@@ -14,17 +14,22 @@ class Reviews extends React.Component {
 
     this.reverseCount = 0;
     this.handleCreateReview = this.handleCreateReview.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this._formSwitch = this._formSwitch.bind(this);
   }
 
+  handleClick(id){
+    // hashHistory.push('users/1');
+  }
+
   componentDidUpdate(){
-    if(this.props.parent.reviews !== undefined){
-      if(this.state.reviews === undefined ||
-         this.props.parent.reviews.length > this.state.reviews.length){
-           this.setState({reviews: this.props.parent.reviews});
+    let parentReviews = this.props.parent.reviews;
+    let stateReviews = this.state.reviews;
+    if(parentReviews){
+      if(!stateReviews || parentReviews.length > stateReviews.length){
+        this.setState({reviews: parentReviews});
       }
     }
-
     if(this.props.showForm &&
        !this.state.showForm){
       this.setState({showForm: true});
@@ -63,14 +68,11 @@ class Reviews extends React.Component {
                                    starColor={'#e5050b'}
                                    emptyStarColor={'#acacac'}
                                    renderStarIcon={()=><span
-                                   className='star-symbol'>✪</span>}
-              />
+                                   className='star-symbol'>✪</span>}/>
             </div>
-
             <div className="input">
               <textarea className="restaurant-reviews-form-textarea"
-                        placeholder="Your review will help others
-                                    learn about great local restaurants."
+                        placeholder="Your review will help others learn about great local restaurants."
                         value={this.state.body}
                         onChange={this.update('body')}></textarea>
             </div>
@@ -108,7 +110,7 @@ class Reviews extends React.Component {
 
   _dateRender(date){
     let dateString = "";
-    if(date === undefined){
+    if(!date){
       let d = new Date();
       return [
                 d.getFullYear(),
@@ -125,18 +127,18 @@ class Reviews extends React.Component {
 
   render() {
     let reviews = this.state.reviews;
-    if(this.reverseCount === 0 && reviews !== undefined){
+    if(this.reverseCount === 0 && reviews){
       reviews = reviews.reverse();
     }
 
-    if(reviews === undefined){
+    if(!reviews){
       return (
         <div className='loader'></div>
       );
     } else {
       this.reverseCount += 1;
       const users = this.props.parent.users;
-      if (users === undefined){
+      if (!users){
         return (
           <div className='loader'></div>
         );
@@ -146,16 +148,11 @@ class Reviews extends React.Component {
             <div className='restaurant-reviews-form-border'>
               {this._form()}
             <h1>Recommanded Reviews</h1>
-            {
-              reviews.map(review => {
-                let userPhoto = "";
-                let userName = "";
-                let userLocation = "";
+            { reviews.map(review => {
+                let user = "";
                 for(let i = 0; i < users.length; i++){
                   if (users[i].id === review.user_id){
-                    userPhoto = users[i].photo;
-                    userName = users[i].username;
-                    userLocation = users[i].location;
+                    user = users[i];
                     break;
                   }
                 }
@@ -164,17 +161,18 @@ class Reviews extends React.Component {
                   <div className='review group' key={review.id}>
                     <div className='review-primary-attr group'>
                       <div className='review-primary-attr-left'>
-                        <img src={`${userPhoto}`}
+                        <img src={`${user.photo}`}
                              alt='user picture'
                              height="75"
-                             width="75"/>
+                             width="75"
+                             onClick={()=>this.handleClick(user.id)}/>
                       </div>
                       <div className='review-primary-attr-right'>
-                        <h3>
-                          {userName}
+                        <h3 onClick={()=>this.handleClick(user.id)}>
+                          {user.username}
                         </h3>
                         <h4>
-                          {userLocation}
+                          {user.location}
                         </h4>
                       </div>
                     </div>
@@ -202,8 +200,8 @@ class Reviews extends React.Component {
                   </div>
                 );
               })
-            }
-          </div>
+             }
+           </div>
           </div>
         );
       }

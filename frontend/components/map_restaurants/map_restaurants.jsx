@@ -11,14 +11,13 @@ class Map extends React.Component {
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(35, 35)
-      },
-      mapRendered: false
+      }
     };
   }
 
   componentDidUpdate(){
     var restaurants = this.props.restaurants;
-    if(restaurants && restaurants.length > 0 && !this.state.mapRendered){
+    if(restaurants && restaurants.length > 0){
       const mapDOMNode = this.refs.map;
       const mapOptions = {
         zoomControl: true,
@@ -67,7 +66,6 @@ class Map extends React.Component {
           this.setZoom(11);
           google.maps.event.removeListener(boundsListener);
         });
-      this.setState({mapRendered: true});
     }
   }
 
