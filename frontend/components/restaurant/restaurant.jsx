@@ -35,10 +35,6 @@ class Restaurant extends React.Component {
     }
   }
 
-  _showForm(){
-    this.showForm = true;
-  }
-
   _formSwitch(){
     this.setState({showForm: true});
   }
