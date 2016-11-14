@@ -7,12 +7,10 @@ class Restaurant extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      showForm: false,
       scrolling: false,
       photos: []
     };
 
-    this._formSwitch = this._formSwitch.bind(this);
     this._scrollPictures = this._scrollPictures.bind(this);
   }
 
@@ -32,21 +30,6 @@ class Restaurant extends React.Component {
         photos: photos
       });
       this.autoScroll = setInterval(()=>this._scrollPictures('left'), 5000);
-    }
-  }
-
-  _formSwitch(){
-    this.setState({showForm: true});
-  }
-
-  _showReviewButton(){
-    if(this.props.currentUser){
-      return (
-        <div onClick={this._formSwitch}
-             className='restaurant-reviews-create'>
-          <span>Write A Review</span>
-        </div>
-      );
     }
   }
 
@@ -140,12 +123,6 @@ class Restaurant extends React.Component {
                   </div>
                   <div className="price-range">{restaurant.price_range}</div>
                 </div>
-
-                <div className="restaurant-top-right-side">
-                  <div className='restaurant-top-right-side-review'>
-                    {this._showReviewButton()}
-                  </div>
-                </div>
               </header>
 
               <header className="restaurant-middle">
@@ -215,8 +192,7 @@ class Restaurant extends React.Component {
           <div className="restaurant-content">
             <content className="restaurant-bottom">
               <div className="restaurant-bottom-reviews">
-                <ReviewsContainer restaurant={restaurant}
-                                  showForm={this.state.showForm} />
+                <ReviewsContainer restaurant={restaurant}/>
               </div>
 
               <div className="restaurant-bottom-sidebar">

@@ -8,7 +8,7 @@ class Reviews extends React.Component {
     this.state = {
       body: "",
       rating: 4,
-      showForm: this.props.showForm,
+      showForm: false,
       reviews: this.props.parent.reviews
     };
 
@@ -29,10 +29,6 @@ class Reviews extends React.Component {
       if(!stateReviews || parentReviews.length > stateReviews.length){
         this.setState({reviews: parentReviews});
       }
-    }
-    if(this.props.showForm &&
-       !this.state.showForm){
-      this.setState({showForm: true});
     }
   }
 
@@ -56,6 +52,10 @@ class Reviews extends React.Component {
 
   onStarClick(nextValue, prevValue, name) {
     this.setState({rating: nextValue});
+  }
+
+  _formSwitch(){
+    this.setState({showForm: true});
   }
 
   _form(){
@@ -92,7 +92,9 @@ class Reviews extends React.Component {
         </form>
       );
     } else if(this.props.currentUser && !this.state.showForm){
-      return "";
+      return (
+        <div className='restaurant-reviews-form'></div>
+      );
     } else {
       return (
         <div>
@@ -101,10 +103,6 @@ class Reviews extends React.Component {
         </div>
       );
     }
-  }
-
-  _formSwitch(){
-    this.setState({showForm: true});
   }
 
   padDate(d) {
@@ -128,12 +126,22 @@ class Reviews extends React.Component {
     }
   }
 
+  _showReviewButton(){
+    if(this.props.currentUser){
+      return (
+        <div onClick={this._formSwitch}
+             className='restaurant-reviews-create'>
+          <span>Write A Review</span>
+        </div>
+      );
+    }
+  }
+
   render() {
     let reviews = this.state.reviews;
     if(this.reverseCount === 0 && reviews){
       reviews = reviews.reverse();
     }
-
     if(!reviews){
       return (
         <div className='loader'></div>
@@ -149,7 +157,13 @@ class Reviews extends React.Component {
         return (
           <div>
             <div className='restaurant-reviews-form-border'>
+            <div className='review-seperator'>
               {this._form()}
+              <div className='reviews-write-button'>
+                {this._showReviewButton()}
+              </div>
+            </div>
+
             <h1>Recommanded Reviews</h1>
             { reviews.map(review => {
                 let user = "";
