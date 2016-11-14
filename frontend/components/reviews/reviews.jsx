@@ -38,9 +38,12 @@ class Reviews extends React.Component {
 
   handleCreateReview(e){
     e.preventDefault();
-    const review = {body: this.state.body, rating: this.state.rating};
-    review['user_id'] = this.props.currentUser.id;
-    review['restaurant_id'] = this.props.parent.id;
+    const review = {
+      body: this.state.body,
+      rating: this.state.rating,
+      user_id: this.props.currentUser.id,
+      restaurant_id: this.props.parent.id
+    };
     this.props.createReview(review);
     this.setState({body: "",
                    rating: 4,
@@ -155,6 +158,9 @@ class Reviews extends React.Component {
                     user = users[i];
                     break;
                   }
+                }
+                if(user === ""){
+                  user = this.props.currentUser;
                 }
 
                 return (

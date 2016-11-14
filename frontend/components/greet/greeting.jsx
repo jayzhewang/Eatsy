@@ -2,10 +2,23 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Greeting extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      userPhoto: undefined
+    };
+  }
+
+  componentDidUpdate(){
+    if(this.props.currentUser && !this.state.userPhoto){
+      this.setState({userPhoto: this.props.currentUser.photo});
+    }
+  }
+
   render(){
-    if(this.props.currentUser){
-      const userPhoto = this.props.currentUser.photo;
-      if(userPhoto === undefined){
+    const user = this.props.currentUser;
+    if(user && Object.keys(user).length > 0){
+      if(!this.state.userPhoto){
         return (
           <div className='loader'></div>
         );

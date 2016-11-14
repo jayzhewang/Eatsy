@@ -5,5 +5,6 @@ import ReviewReducer from './reviews_reducer';
 
 export default combineReducers({
   session: SessionReducer,
-  restaurants: RestaurantsReducer
+  restaurants: RestaurantsReducer,
+  reviews: ReviewReducer
 });
