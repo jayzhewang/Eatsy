@@ -16,6 +16,7 @@ class Reviews extends React.Component {
     this.handleCreateReview = this.handleCreateReview.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this._formSwitch = this._formSwitch.bind(this);
+    this.lastUser = "";
   }
 
   handleClick(id){
@@ -29,6 +30,9 @@ class Reviews extends React.Component {
       if(!stateReviews || parentReviews.length > stateReviews.length){
         this.setState({reviews: parentReviews});
       }
+    }
+    if(this.props.currentUser){
+      this.lastUser = this.props.currentUser;
     }
   }
 
@@ -127,6 +131,7 @@ class Reviews extends React.Component {
   }
 
   _showReviewButton(){
+    debugger;
     if(this.props.currentUser){
       return (
         <div onClick={this._formSwitch}
@@ -174,7 +179,11 @@ class Reviews extends React.Component {
                   }
                 }
                 if(user === ""){
-                  user = this.props.currentUser;
+                  if(this.props.currentUser){
+                    user = this.props.currentUser;
+                  } else {
+                    user = this.lastUser;
+                  }
                 }
 
                 return (
