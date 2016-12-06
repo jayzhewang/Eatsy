@@ -23,9 +23,6 @@ export const logout = function(success){
 	$.ajax({
 		method: 'delete',
 		url: '/api/session',
-		success,
-		error: () => {
-		  console.log("Logout error in SessionApiUtil#logout");
-		}
+		success
 	});
 };
